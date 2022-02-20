@@ -1,0 +1,69 @@
+<view class="">
+  <!-- <view style="height:{{Custom.top}}px;"></view>
+  <view class="flex-row flex-center searchbox ">
+    <image src="{{uploadpath}}resource/{{res.search}}" class="searchicon"></image>
+    <input type="text" placeholder="请输入课程名称" class="h6 margin-left-10" placeholder-class="txt-99"></input>
+  </view> -->
+
+  <view bindtap="navtoPage" data-page="search" class='search  flex-row flex-center  padding-15 margin-30'>
+  <image class='icon-15' src="{{uploadpath}}resource/{{res.search}}"></image>
+  <view class='h6 txt-gray2 margin-left-10'>输入商品名称</view>
+</view>
+
+</view>
+
+<view class="">
+  <view class="tab-h margin-left-30 type">
+    <view wx:for="{{typelist}}" wx:key='k' wx:for-index='idx' class="tab-item margin-right-69" bindtap="switchnav"
+      id="{{idx}}">
+      <view class="flex-row flex-column">
+        <view class=" {{typeidx==idx?'txt-33 h5 txt-bold':'txt-99 f-26'}}">{{item.name}}</view>
+        <view class="typelines {{typeidx==idx?'typelines_act':''}}"></view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="marginsw">
+  <swiper class=" indexbanner" indicator-dots="true" indicator-color="#FFFFFF" indicator-active-color="#FF6900" circular="true" autoplay="true">
+    <swiper-item wx:for="{{lunbolist}}" wx:key='k' class="indexbanner" >
+      <image src="{{uploadpath}}course/{{item.img}}" mode="aspectFill" bindtap="tobanner" data-item="{{item}}" class="indexbanner"></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+
+<view class="">
+  <view wx:for="{{steplist}}" wx:key='k' class="">
+    <view class="flex-row flex-center margin-30">
+      <view class="f-36 txt-33 txt-bold">{{item.name}}</view>
+      <view class="flex-1"></view>
+      <view class="txt-99 h6 " bindtap="tolist" id='{{item.id}}'>更多</view>
+      <image src="{{uploadpath}}resource/{{res.right}}" class="icon-10 margin-left-5" bindtap="tolist" id='{{item.id}}'>
+      </image>
+    </view>
+    <scroll-view scroll-x="true" class="tab-h coursebox">
+
+      <view class="tab-item margin-right-20 {{idx==0?'margin-left-30':''}} w320" wx:for="{{item.list}}" wx:key='i'
+        wx:for-index='idx' wx:for-item='course'  bindtap="todetail" id="{{course.id}}">
+        <view class="pore">
+          <image src="{{uploadpath}}course/{{course.cover}}" mode="aspectFill" class="cover"></image>
+          <view class="{{course.sf_status=='A'?'huiyuan':'mianfei'}}">{{course.sf_status=='A'?'会员':(course.sf_status=='B'?'免费':'积分')}}</view>
+        </view>
+        
+        <view class="margin-top-20 txt-33 h5 chaochu2">{{course.name}}</view>
+        <view class="flex-row flex-wrap margin-top-20 margin-left-10 margin-right-10">
+          <view class="fenlei" wx:for="{{course.typelist}}" wx:key='t' wx:for-item='typeitem' wx:for-index='yidx'
+            wx:if="{{yidx<2}}">{{typeitem}}</view>
+        </view>
+        <view class="flex-row flex-center margin-top-20 margin-left-10 margin-right-10">
+          <view class="h7 txt-99">{{course.teacher}}</view>
+          <view class="flex-1"></view>
+          <view class="h7" style="color:#FF6900;">{{course.people}}人参加</view>
+        </view>
+      </view>
+
+    </scroll-view>
+
+  </view>
+</view>

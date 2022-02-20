@@ -1,0 +1,19 @@
+<!--pages/topiclist/topiclist.wxml-->
+<view class="margin-30 padding-30 radius-10 bg-white" wx:for="{{list}}" wx:for-index="index" wx:for-item="topic">
+
+  <view class="f-30 txt-bold">{{topic.name}}</view>
+
+  <view  wx:for="{{topic.topic_item}}" wx:for-index="index2" class="h5 {{item.choose?'choose_topic_block ':'topic_block '}}" bindtap="bindchoose"
+    id="{{index2}}" data-topic_id="{{topic.id}}" data-topic_item_id="{{item.id}}" data-index="{{index}}">
+    {{item.name}}
+  </view>
+
+</view>
+
+<view class="under_block ">
+  <view class=" padding-20">
+    <view class="under_button bg-orange txt-white h5 " bindtap="submit"  >提交
+    </view>
+  </view>
+  <view class="height-40"></view>
+</view>

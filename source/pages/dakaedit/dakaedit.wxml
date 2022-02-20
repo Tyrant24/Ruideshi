@@ -1,0 +1,77 @@
+<!--pages/dakaedit/dakaedit.wxml-->
+
+<view class="bg-white margin-top-20">
+  <view class="paddings flex-row flex-center">
+    <view class="f-30">打卡类型</view>
+    <picker range="{{dakatypelist}}" class="flex-1" range-key="name" bindchange="binddakatype">
+      <view class="margin-left-60 h5 ">{{typename}}</view>
+    </picker>
+    <image src="{{uploadpath}}resource/{{res.right}}" class="icon-15"></image>
+
+  </view>
+
+  <view class="paddings flex-row flex-center">
+    <view class="f-30">打卡名称</view>
+    <input type="text" placeholder="请填写打卡名称" bindinput="bindname" value="{{name}}"
+      class="h5 margin-left-60 flex-1"></input>
+    <!-- <view class="margin-left-60 h5">{{info.name}}</view> -->
+    <view class="padding-10" bindtap="bindclear">
+      <image src="{{uploadpath}}resource/{{res.close}}" class="icon-15"></image>
+    </view>
+  </view>
+
+  <view class="paddings flex-row flex-center">
+    <view class="f-30">积分额度</view>
+    <input type="number" placeholder="请输入打卡积分额度" bindinput="bindjifen" value="{{jifen}}"
+      class="h5 margin-left-60 flex-1"></input> 
+    <!-- <view class="padding-10" bindtap="bindclear">
+      <image src="{{uploadpath}}resource/{{res.close}}" class="icon-15"></image>
+    </view> -->
+  </view>
+
+  <view class="paddings flex-row flex-center">
+    <view class="f-30">开始日期</view>
+    <picker mode="date" value="{{date}}"   bindchange="bindDateChange">
+      <view class="picker">
+        <view class="margin-left-60 h5">{{date}}</view>
+      </view>
+    </picker>
+    <view class="flex-1"></view>
+
+    <view class="f-30">开始时间</view>
+    <picker mode="time" value="{{time}}"   bindchange="bindTimeChange">
+      <view class="picker">
+        <view class="margin-left-60 h5">{{time}}</view>
+      </view>
+    </picker>
+
+  </view>
+
+
+  <view class="paddings flex-row flex-center">
+    <view class="f-30">结束日期</view>
+    <picker mode="date" value="{{date2}}"   bindchange="bindDateChange2">
+      <view class="picker">
+        <view class="margin-left-60 h5">{{date2}}</view>
+      </view>
+    </picker>
+    <view class="flex-1"></view>
+
+    <view class="f-30">结束时间</view>
+    <picker mode="time" value="{{time2}}"   bindchange="bindTimeChange2">
+      <view class="picker">
+        <view class="margin-left-60 h5">{{time2}}</view>
+      </view>
+    </picker>
+
+  </view>
+</view>
+
+<view class="height-70"></view>
+<view class="under_block ">
+  <view class=" padding-20">
+    <view class="under_button bg-orange txt-white h5 " bindtap="submit" >生成二维码
+    </view>
+  </view>
+  <view class="height-40"></view>
+</view>

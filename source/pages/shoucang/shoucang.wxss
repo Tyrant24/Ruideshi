@@ -1,0 +1,87 @@
+/* pages/shoucang/shoucang.wxss */
+
+.w60 {
+  width: 60rpx;
+}
+.block_list{
+  padding: 20rpx 0 20rpx 0;
+  margin: 0 30rpx 0 30rpx;
+  border-bottom: 2rpx solid #EEEEEE;
+
+}
+.searchicon{
+  width: 44rpx;
+  height: 44rpx;
+}
+.olines {
+  width: 40rpx;
+  height: 6rpx;
+  background: transparent;
+  border-radius: 3rpx;
+  margin-top: 10rpx;
+}
+.olines_act{
+  background: #FF6900;
+}
+
+.imgs {
+  width: 340rpx;
+  height: 240rpx;
+  border-radius: 20rpx;
+}
+
+.touxiang{
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+}
+.margin-bottom-25{
+  margin-bottom: 25rpx;
+}
+
+.scjimgs {
+  width: 334rpx;
+  height: 334rpx;
+  border-radius: 10rpx;
+}
+.newfileicon{
+  width: 44rpx;
+  height: 44rpx;
+}
+
+
+
+.mask{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000000;
+  opacity: 0.5;
+  z-index: 101;
+}
+.xzscj {
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #FFFFFF;
+  border-radius: 20rpx 20rpx 0 0;
+  z-index: 102;
+}
+
+.xjscj{
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #FFFFFF;
+  border-radius: 20rpx 20rpx 0 0;
+  z-index: 103;
+}
+.mrshoucangjia {
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 20rpx;
+}

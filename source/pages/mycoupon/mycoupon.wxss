@@ -1,0 +1,83 @@
+/* pages/mycoupon/mycoupon.wxss */
+Page {
+  background: #F9F9F8;
+}
+.fixedtop {
+  width: 100vw;
+  /* height: 80rpx; */
+  background: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  padding-top: 20rpx;
+}
+.txt-69 {
+  color: #FF6900;
+}
+.lines {
+  width: 40rpx;
+  height: 6rpx;
+  background: transparent;
+  border-radius: 3rpx;
+  margin-top: 20rpx;
+}
+.lines_act {
+  background: #FF6900;
+}
+
+.youhuiquan {
+  margin: 20rpx 30rpx 0;
+  background-size: 100% 100%;
+  min-height: 200rpx;
+}
+.shiyong {
+  width: 110rpx;
+  height: 44rpx;
+  background: #FF6900;
+  border-radius: 22rpx;
+  color: #FFFFFF;
+  font-size: 24rpx;
+  line-height: 44rpx;
+  text-align: center;
+}
+.height-80 {
+  height: 80rpx;
+}
+.w200 {
+  min-width: 200rpx;
+}
+.f-54{
+  font-size: 54rpx !important;
+}
+
+
+.mask {
+  width: 100vw;
+  height: 100vh;
+  background: #000000;
+  opacity: 0.5;
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.fixedmid {
+  width: 600rpx;
+  height: 640rpx;
+  background: #FFFFFF;
+  border-radius: 20rpx;
+  position: fixed;
+  top: 300rpx;
+  left: 75rpx;
+  z-index: 100;
+}
+.icon44{
+  width: 44rpx;
+  height: 44rpx;
+  margin: 18rpx 18rpx 48rpx;
+}
+.erweima{
+  width: 460rpx;
+  height: 460rpx;
+}

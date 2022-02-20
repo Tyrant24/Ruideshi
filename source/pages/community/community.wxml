@@ -1,0 +1,127 @@
+<view class="fixedtop">
+  <!-- <view style="height:{{Custom.top}}px"></view> -->
+
+  <view class="flex-row flex-center">
+    <view class="flex-1"></view>
+    <view class="flex-row flex-column" bindtap="switchnav" id='A'>
+      <view class="{{type=='A'?'txt-33 txt-bold':'txt-66'}} f-30">推荐</view>
+      <view class="olines {{type=='A'?'':'bgtr'}}"></view>
+    </view>
+    <view class="w30"></view>
+    <view class="flex-row flex-column" bindtap="switchnav" id='B'>
+      <view class="{{type=='B'?'txt-33 txt-bold':'txt-66'}} f-30">最新</view>
+      <view class="olines {{type=='B'?'':'bgtr'}}"></view>
+    </view>
+    <view class="w30"></view>
+    <view class="flex-row flex-column" bindtap="switchnav" id='C'>
+      <view class="{{type=='C'?'txt-33 txt-bold':'txt-66'}} f-30">活动</view>
+      <view class="olines {{type=='C'?'':'bgtr'}}"></view>
+    </view>
+
+    <view class="flex-1"></view>
+  </view>
+</view>
+
+<view style="height:{{Custom.height}}px;"></view>
+
+<view class="flex-row flex-wrap margin-20" wx:if="{{type!='C'}}">
+  <view wx:for="{{huati}}" wx:key='k' bindtap="chosehuati" id='{{item.id}}'>
+    <view class="huati {{item.id==huati_id?'huati_act':''}}">{{item.name}}</view>
+  </view>
+</view>
+
+  <!-- <view class="cloumns margin-20" wx:if="{{type!='C'}}">
+    <view wx:for="{{list}}" wx:key='k' wx:for-index='idx' class="menu " bindtap="todetail" id="{{item.id}}">
+      <block>
+ 
+        <image src="{{uploadpath}}community/{{item.lunbo[0].img}}" class="cover"
+          mode="widthFix"></image>
+        <view class="menucon">
+          <view class="h6 txt-66">{{item.name}}</view>
+          <view class="flex-row flex-center  margin-top-25">
+            <view class="flex-row flex-center" wx:if="{{item.member_id>0}}">
+              <image src="{{item.member_avatarUrl}}" class="touxiang" mode="widthFix"></image>
+              <view class="h7 txt-99">{{item.member_id_name}}</view>
+            </view>
+            <view wx:else>
+              <image src="{{uploadpath}}community/{{item.touxiang}}" class="touxiang" mode="widthFix"></image>
+              <view class="h7 txt-99">{{item.nickName}}</view>
+            </view>
+            <view class="flex-1"></view>
+            <image src="{{uploadpath}}resource/{{item.isdianzan>0?res.dianzan2:res.dianzan}}" class="dianzan"></image>
+            <view class="h7 txt-99">{{item.dianzan}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view> -->
+
+<view class="flex-row  margin-20" wx:if="{{type!='C'}}">
+
+  <view class="flex-row flex-column">
+    <view wx:for="{{list}}" wx:key='k' wx:for-index='idx' class="menu margin-top-5" bindtap="todetail" id="{{item.id}}">
+      <block wx:if="{{idx%2==0}}">
+        <image wx:if="{{item.lunbo.length>0}}" src="{{uploadpath}}community/{{item.lunbo[0].img}}" class="cover"
+          mode="widthFix"></image>
+        <view class="menucon">
+          <view class="h6 txt-66">{{item.name}}</view>
+          <view class="flex-row flex-center  margin-top-25">
+            <view class="flex-row flex-center" wx:if="{{item.member_id>0}}">
+              <image src="{{item.member_avatarUrl}}" class="touxiang" mode="widthFix"></image>
+              <view class="h7 txt-99">{{item.member_id_name}}</view>
+            </view>
+            <view wx:else class="flex-row flex-center">
+              <image src="{{uploadpath}}community/{{item.touxiang}}" class="touxiang" mode="widthFix"></image>
+              <view class="h7 txt-99">{{item.nickName}}</view>
+            </view>
+            <view class="flex-1"></view>
+            <image src="{{uploadpath}}resource/{{item.isdianzan>0?res.dianzan2:res.dianzan}}" class="dianzan"></image>
+            <view class="h7 txt-99">{{item.dianzan}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="flex-1"></view>
+  <view class="flex-row flex-column">
+    <view wx:for="{{list}}" wx:key='k' wx:for-index='idx' class="menu" bindtap="todetail" id="{{item.id}}">
+      <block wx:if="{{idx%2!=0}}">
+        <image wx:if="{{item.lunbo.length>0}}" src="{{uploadpath}}community/{{item.lunbo[0].img}}" class="cover"
+          mode="widthFix"></image>
+        <view class="menucon">
+          <view class="h6 txt-66">{{item.name}}</view>
+          <view class="flex-row flex-center  margin-top-25">
+            <view class="flex-row flex-center" wx:if="{{item.member_id>0}}">
+              <image src="{{item.member_avatarUrl}}" class="touxiang" mode="widthFix"></image>
+              <view class="h7 txt-99">{{item.member_id_name}}</view>
+            </view>
+            <view wx:else class="flex-row flex-center">
+              <image src="{{uploadpath}}community/{{item.touxiang}}" class="touxiang" mode="widthFix"></image>
+              <view class="h7 txt-99">{{item.nickName}}</view>
+            </view>
+
+            <view class="flex-1"></view>
+            <image src="{{uploadpath}}resource/{{item.isdianzan>0?res.dianzan2:res.dianzan}}" class="dianzan"></image>
+            <view class="h7 txt-99">{{item.dianzan}}</view>
+          </view>
+        </view>
+      </block>
+
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{type=='C'}}" class="w100">
+  <view class="f-30 txt-33 margin-bottom-30 txt-bold">热门活动上线中</view>
+  <view wx:for="{{activitylist}}" wx:key='k' class="margin-bottom-40" bindtap="toactivity" id="{{item.id}}">
+    <image src="{{uploadpath}}activity/{{item.cover}}" class="act_cover"></image>
+    <view class="flex-row flex-center">
+      <view class="flex-1 h5 txt-33 txt-bold">{{item.name}}</view>
+      <view class="h6 txt-bold " style="color: #FF7413;">立即参与</view>
+      <image src="{{uploadpath}}resource/{{res.xiangyou}}" class="icon-10 margin-left-5"></image>
+    </view>
+  </view>
+</view>
+
+
+<image src="{{uploadpath}}resource/{{res.fatie}}" class="fatie" wx:if="{{type!='C'}}" bindtap="fatie"></image>

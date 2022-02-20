@@ -1,0 +1,54 @@
+<!--pages/aftersaleinfo/aftersaleinfo.wxml-->
+<view class="back_block" bindtap="backPage" wx:if="{{type!=0}}">
+  <image src="{{uploadpath}}resource/{{res.whiteback}}" class="icon_back"></image>
+</view>
+<view class="home_block" bindtap="reLaunch" data-page="mall" wx:if="{{alltype==0}}">
+  <image src="{{uploadpath}}resource/{{res.backhome}}" class="icon_backhome"></image>
+</view>
+
+
+<view class="" style="background-image:url({{uploadpath}}resource/{{res.bg1}});background-size:100% 100%;">
+  <view class="height-150"></view>
+  <view class="flex-row flex-center margin-30">
+    <view class="txt-bold txt-white h4 flex-1">{{info.aftersale_status_name}}</view>
+    <!-- <view class="txt-white h5" wx:if="{{info.order_status=='A'}}">剩余支付时间为09:00</view> -->
+  </view>
+  <view class="padding-20 bg-white radius-10 margin-30">
+    <view class="flex-row flex-center  ">
+      <image src="{{uploadpath}}goods/{{info.orderitem_coverimg}}" class="icon-80"></image>
+      <view class="margin-left-20 flex-1">
+
+        <view class="h6 txt-bold">{{info.goods_name}}</view>
+        <view class="h7 txt-gray margin-top-30">{{info.orderitem_specifications_name}}</view>
+
+        <view class="flex-row flex-center margin-top-30">
+          <view class="h7   txt-orange">￥</view>
+          <view class="h6   txt-orange txt-bold flex-1">{{info.orderitem_unitprice}}</view>
+          <view class="txt-gray h7">x{{info.orderitem_number}}</view>
+        </view>
+
+      </view>
+    </view>
+
+    <view class="flex-row flex-center margin-top-30">
+      <view class="h6">问题描述</view>
+      <view class="h6 txt-gray margin-left-40">{{info.reason_name}}</view>
+    </view>
+
+    <view class="flex-row flex-center margin-top-30">
+      <view class="h6">退款金额</view>
+      <view class="h6 txt-gray margin-left-40">{{info.orderitem_amount}}</view>
+    </view>
+
+    <view class="flex-row flex-center margin-top-30">
+      <view class="h6">申请时间</view>
+      <view class="h6 txt-gray margin-left-40">{{info.apply_time}}</view>
+    </view>
+
+    <view class="flex-row flex-center margin-top-30">
+      <view class="h6">退款编号</view>
+      <view class="h6 txt-gray margin-left-40">{{info.aftersaleno}}</view>
+    </view>
+  </view>
+
+</view>

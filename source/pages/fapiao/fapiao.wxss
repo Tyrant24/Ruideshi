@@ -1,0 +1,40 @@
+/* pages/fapiao/fapiao.wxss */
+Page {
+  background: #F9F9F8;
+}
+
+.goods_coverimage{
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.txt-69 {
+  color: #FF6900;
+}
+.navtop{
+  margin: 30rpx;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  background: #ffffff;
+}
+
+
+.btns {
+  width: 600rpx;
+  height: 70rpx;
+  background: #FF6900;
+  border-radius: 35rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #ffffff;
+  font-size: 30rpx;
+  font-weight: 600;
+  position: fixed;
+  left: 75rpx;
+  bottom: 50rpx;
+  z-index: 100;
+}
+button.button-hover {
+  background-color: #FF6900;
+  border-color: #ffffff;
+}

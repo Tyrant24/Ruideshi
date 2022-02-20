@@ -1,0 +1,367 @@
+{
+        "setting": {},
+        "condition": {
+                "plugin": {
+                        "list": []
+                },
+                "game": {
+                        "list": []
+                },
+                "gamePlugin": {
+                        "list": []
+                },
+                "miniprogram": {
+                        "list": [
+                                {
+                                        "id": -1,
+                                        "name": "name",
+                                        "pathName": "pages/name/name",
+                                        "query": "",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "社区",
+                                        "pathName": "pages/community/community",
+                                        "query": "",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "评论",
+                                        "pathName": "pages/communityinfo/communityinfo",
+                                        "query": "id=1",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "发帖",
+                                        "pathName": "pages/fatie/fatie",
+                                        "query": "id=1",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "话题",
+                                        "pathName": "pages/huati/huati",
+                                        "query": "id=1",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "我的",
+                                        "pathName": "pages/me/me",
+                                        "query": "id=1",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "我的收藏",
+                                        "pathName": "pages/shoucang/shoucang",
+                                        "query": "",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "个人信息",
+                                        "pathName": "pages/memberinfo/memberinfo",
+                                        "query": "",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "课程",
+                                        "pathName": "pages/course/course",
+                                        "query": "",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "更多课程",
+                                        "pathName": "pages/courselist/courselist",
+                                        "query": "id=1",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "课程详情",
+                                        "pathName": "pages/courseinfo/courseinfo",
+                                        "query": "id=2",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "商城分类",
+                                        "pathName": "pages/goodstype/goodstype",
+                                        "query": "",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "购物车",
+                                        "pathName": "pages/carts/carts",
+                                        "query": "member_id=1",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "客户",
+                                        "pathName": "pages/kehu/kehu",
+                                        "query": "id=2",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "客户详情",
+                                        "pathName": "pages/kehuinfo/kehuinfo",
+                                        "query": "id=2",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "关于我们",
+                                        "pathName": "pages/aboutus/aboutus",
+                                        "query": "id=2",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "意见反馈",
+                                        "pathName": "pages/feedback/feedback",
+                                        "query": "id=2",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "确认订单",
+                                        "pathName": "pages/confirmorder/confirmorder",
+                                        "query": "",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "地址列表",
+                                        "pathName": "pages/addresslist/addresslist",
+                                        "query": "undefined=undefined",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "地址修改",
+                                        "pathName": "pages/addressedit/addressedit",
+                                        "query": "undefined=undefined",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "订单列表",
+                                        "pathName": "pages/orderlist/orderlist",
+                                        "query": "",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "订单详情",
+                                        "pathName": "pages/orderinfo/orderinfo",
+                                        "query": "id=292",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "通知",
+                                        "pathName": "pages/tongzhiinfo/tongzhiinfo",
+                                        "query": "",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "通知评论",
+                                        "pathName": "pages/tongzhipl/tongzhipl",
+                                        "query": "",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "收藏通知",
+                                        "pathName": "pages/tongzhisc/tongzhisc",
+                                        "query": "",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "客户订单",
+                                        "pathName": "pages/kehuorder/kehuorder",
+                                        "query": "",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "会员",
+                                        "pathName": "pages/member/member",
+                                        "query": "",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "商品详情",
+                                        "pathName": "pages/goodsinfo/goodsinfo",
+                                        "query": "id=1",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "修改订单地址",
+                                        "pathName": "pages/updateaddress/updateaddress",
+                                        "query": "id=1",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "积分",
+                                        "pathName": "pages/memberjifen/memberjifen",
+                                        "query": "",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "优惠券",
+                                        "pathName": "pages/mycoupon/mycoupon",
+                                        "query": "",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "商品评价",
+                                        "pathName": "pages/evaluate/evaluate",
+                                        "query": "order_id=1",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "物流",
+                                        "pathName": "pages/logistics/logistics",
+                                        "query": "",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "收藏夹",
+                                        "pathName": "pages/shoucangjia/shoucangjia",
+                                        "query": "id=2",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "我的收藏",
+                                        "pathName": "pages/shoucang/shoucang",
+                                        "query": "id=2",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "活动详情",
+                                        "pathName": "pages/activity/activity",
+                                        "query": "id=1",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "发票",
+                                        "pathName": "pages/fapiao/fapiao",
+                                        "query": "id=1",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "发起售后",
+                                        "pathName": "pages/creataftersale/creataftersale",
+                                        "query": "id=287&order_id=259",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "售后跟踪",
+                                        "pathName": "pages/aftersale/aftersale",
+                                        "query": "undefined=undefined",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "售后",
+                                        "pathName": "pages/kehushouhou/kehushouhou",
+                                        "query": "undefined=undefined",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "我的课程",
+                                        "pathName": "pages/mykecheng/mykecheng",
+                                        "query": "undefined=undefined",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "我的 活动",
+                                        "pathName": "pages/myactivity/myactivity",
+                                        "query": "undefined=undefined",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "搜索",
+                                        "pathName": "pages/search/search",
+                                        "query": "",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "菜谱",
+                                        "pathName": "pages/cookbook/cookbook",
+                                        "query": "",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "菜谱详情",
+                                        "pathName": "pages/cookbookinfo/cookbookinfo",
+                                        "query": "id=1",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "打卡积分列表",
+                                        "pathName": "pages/dakajifen/dakajifen",
+                                        "query": "undefined=undefined",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "打卡详情",
+                                        "pathName": "pages/dakajifeninfo/dakajifeninfo",
+                                        "query": "id=2",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "编辑打卡",
+                                        "pathName": "pages/dakaedit/dakaedit",
+                                        "query": "undefined=undefined",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "pages/memberinfo/memberinfo",
+                                        "pathName": "pages/memberinfo/memberinfo",
+                                        "query": "",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "社区评论测试",
+                                        "pathName": "pages/communityinfo/communityinfo",
+                                        "query": "id=11",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "测试购物车",
+                                        "pathName": "pages/carts/carts",
+                                        "query": "member_id=1",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "pages/memberinfo/memberinfo",
+                                        "pathName": "pages/memberinfo/memberinfo",
+                                        "query": "",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "pages/goodsinfo/goodsinfo",
+                                        "pathName": "pages/goodsinfo/goodsinfo",
+                                        "query": "id=7",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "goodstype",
+                                        "pathName": "pages/goodstype/goodstype",
+                                        "query": "",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "pages/cookbookinfo/cookbookinfo",
+                                        "pathName": "pages/cookbookinfo/cookbookinfo",
+                                        "query": "id=616541888169639936",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "pages/orderlist/orderlist",
+                                        "pathName": "pages/orderlist/orderlist",
+                                        "query": "undefined=undefined",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "pages/logistics/logistics",
+                                        "pathName": "pages/logistics/logistics",
+                                        "query": "nu=9885749905241",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "测试页面",
+                                        "pathName": "pages/orderinfo/orderinfo",
+                                        "query": "type=0&id=77",
+                                        "scene": null
+                                }
+                        ]
+                }
+        }
+}

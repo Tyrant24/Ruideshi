@@ -1,0 +1,49 @@
+/* pages/feedback/feedback.wxss */
+
+.texta {
+  margin: 30rpx 20rpx;
+  min-height: 300rpx;
+  background: #F9F9F8;
+  border-radius: 10rpx;
+  padding: 30rpx 20rpx;
+}
+
+.uploadicon {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+}
+.pore {
+  position: relative;
+}
+
+.guanbi{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.fixedbottom {
+  width: 100vw;
+  background: #ffffff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+.tijiao{
+  width: 690rpx;
+  height: 70rpx;
+  background: #FF6900;
+  border-radius: 35rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 28rpx;
+  margin: 20rpx 30rpx;
+}

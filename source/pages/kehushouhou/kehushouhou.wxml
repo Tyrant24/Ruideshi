@@ -1,0 +1,44 @@
+<!--pages/aftersale/aftersale.wxml-->
+
+<view class="bg-white radius-10 margin-30 padding-20" wx:for="{{list}}">
+  <view class="flex-row flex-center">
+    <view class="h6 flex-1 txt-66">{{item.apply_time}}</view>
+    <view class="h6">{{item.aftersale_status_name}}</view>
+  </view>
+
+
+  <view class="flex-row flex-center margin-top-20">
+    <image src="{{uploadpath}}goods/{{item.orderitem_coverimg}}" class="icon-80"></image>
+    <view class="margin-left-20 flex-1">
+
+      <view class="h6 txt-bold">{{item.goods_name}}</view>
+      <view class="h7 txt-gray margin-top-30">{{item.orderitem_specifications_name}}</view>
+
+      <view class="flex-row flex-bottom margin-top-30">
+        <view class="h7   txt-orange">￥</view>
+        <view class="h6   txt-orange txt-bold flex-1">{{item.orderitem_unitprice}}</view>
+        <!-- <view class="txt-gray h7 flex-1 margin-left-10" style="text-decoration:line-through">
+          ￥{{info.goods_original_price}}
+        </view> -->
+        <view class="txt-gray h7">x{{item.orderitem_number}}</view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class="flex-row flex-center margin-top-20">
+    <view class="flex-1"></view>
+    <view class="h6">共{{item.orderitem_number}}件 实付：</view>
+    <view class="h7">￥</view>
+    <view class="f-30">{{item.orderitem_amount}}</view>
+  </view>
+
+  <!-- <view class="h6 txt-gray margin-top" wx:if="{{item.huifu!=''}}">回复：{{item.huifu}}</view> -->
+<view class="lines"></view>
+  <view class="flex-row flex-center ">
+    <image src="{{item.member_avatarUrl}}" class="icon48"></image>
+    <view class="h6 txt-gray margin-left-10">{{item.member_id_name}}</view>
+  </view>
+
+
+</view>

@@ -1,0 +1,68 @@
+/* pages/memberjifen/memberjifen.wxss */
+
+Page {
+  background: #F9F9F8;
+}
+.jifen{
+  width: 70rpx;
+  height: 80rpx;
+}
+
+.navtop{
+  margin: 30rpx;
+  background: #FFFFFF;
+  box-shadow: 0 2rpx 19rpx 1rpx rgba(105, 102, 116, 0.2);
+  border-radius: 10rpx;
+  padding: 46rpx 15rpx 46rpx 50rpx;
+}
+.olines{
+  width: 4rpx;
+  height: 30rpx;
+  background: #FF6900;
+  margin-right: 10rpx;
+}
+.mingxi {
+  margin: 30rpx;
+  padding: 20rpx 20rpx 20rpx 10rpx;
+  background: #FFFFFF;
+  border-radius: 10rpx;
+}
+.xiala {
+  width: 18rpx;
+  height: 14rpx;
+  margin-left: 10rpx;
+}
+.lines {
+  width: 100%;
+  height: 1rpx;
+  background: #EEEEEE;
+  margin: 30rpx 0;
+}
+
+.txt-act {
+  color: #FF6900;
+}
+.w50 {
+  width: 50rpx;
+}
+
+.mask {
+  width: 100vw;
+  height: 100vh;
+  background: #000000;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.fixedmid {
+  width: 660rpx;
+  padding: 20rpx;
+  background: #FFFFFF;
+  border-radius: 20rpx;
+  position: fixed;
+  left: 25rpx;
+  top: 200rpx;
+  z-index: 100;
+}

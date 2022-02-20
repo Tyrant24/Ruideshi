@@ -1,0 +1,55 @@
+/* pages/courselist/courselist.wxss */
+
+.margin30 {
+  margin: 10rpx 30rpx;
+}
+.w334 {
+ width: 334rpx;
+ margin-bottom: 20rpx;
+}
+.cover{
+  width: 334rpx;
+  height: 450rpx;
+}
+
+.fenlei{
+  padding: 5rpx 20rpx;
+  border-radius: 15rpx;
+  background: rgba(255,105,0, 0.1);
+  color: #FF6900;
+  font-size: 20rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.pore {
+  position: relative;
+}
+.huiyuan{
+  width: 80rpx;
+  height: 38rpx;
+  background: #352F32;
+  border-radius: 6rpx;
+  line-height: 38rpx;
+  text-align: center;
+  color: #FF6900;
+  font-size: 24rpx;
+  font-weight: bold;
+  position: absolute;
+  bottom: 20rpx;
+  left: 20rpx;
+}
+.mianfei{
+  width: 80rpx;
+  height: 38rpx;
+  background: #FFFFFF;
+  border-radius: 6rpx;
+  line-height: 38rpx;
+  text-align: center;
+  color: #FF6900;
+  font-size: 24rpx;
+  font-weight: bold;
+  position: absolute;
+  bottom: 20rpx;
+  left: 20rpx;
+} 

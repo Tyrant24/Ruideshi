@@ -1,0 +1,26 @@
+<!--pages/dakajifen/dakajifen.wxml-->
+
+<view class="flex-row flex-center radius-10 margin-30 padding-20 bg-white" wx:for="{{list}}" bindtap="navtoPage"
+  data-page="dakajifeninfo" data-param="id={{item.id}}">
+  <view class="flex-1">
+    <view class="flex-row flex-center">
+      <image src="{{uploadpath}}resource/{{item.type=='A'?res.kc:res.hd}}" class="icon-type"></image>
+      <view class="margin-left-10 txt-bold f-30">{{item.name}}</view>
+    </view>
+    <view class="margin-top-20 txt-gray h6">开始时间：{{item.start_time}} </view>
+    <view class="margin-top-10 txt-gray h6">结束时间：{{item.end_time}}</view>
+  </view>
+
+  <image src="{{uploadpath}}resource/{{res.right}}" class="icon-15"></image>
+
+
+</view>
+
+<view class="height-70"></view>
+<view class="under_block ">
+  <view class=" padding-20">
+    <view class="under_button bg-orange txt-white h5 " bindtap="navtoPage" data-page="dakaedit">添加打卡
+    </view>
+  </view>
+  <view class="height-40"></view>
+</view>

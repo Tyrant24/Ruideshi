@@ -1,0 +1,45 @@
+<view class="flex-row flex-center fixedtop">
+  <view class="flex-1 text-center h6 {{order_status=='B'?'txt-69':'txt-99'}}" bindtap="switchnav" id='B'>已付款</view>
+  <view class="flex-1 text-center h6 {{order_status=='C'?'txt-69':'txt-99'}}" bindtap="switchnav" id='C'>待收货</view>
+  <view class="flex-1 text-center h6 {{order_status=='E'?'txt-69':'txt-99'}}" bindtap="switchnav" id='E'>已完成</view>
+</view>
+
+<view class="height-70"></view>
+<view class="margin30">
+
+  <view wx:for="{{list}}" wx:key='k' class="orders" bindtap="toorder" id="{{item.id}}">
+    <view class="flex-row flex-center">
+      <view class="h6 txt-66">{{item.submit_time}}</view>
+      <view class="flex-1"></view>
+      <view class="h6 txt-69">{{item.order_status_name}}</view>
+    </view>
+    <view class="height-40"></view>
+    <view class="flex-row margin-bottom-20" wx:for="{{item.orderitem}}" wx:key='l' wx:for-item='child'>
+      <image src="{{uploadpath}}goods/{{child.goods_coverimage}}" class="goods_coverimage"></image>
+      <view class="flex-1 margin-left-20">
+        <view class="flex-row flex-top">
+          <view class="flex-1 chaochu h6 txt-33">{{child.goods_name}}</view>
+          <view>
+            <view class="h6 txt-33"><text class="txt-33 f-18">￥</text>{{child.goods_price}}</view>
+            <view class="txt-99 h7 text-line-through">￥{{child.goods_original_price}}</view>
+          </view>
+        </view>
+        <view class="height-50"></view>
+        <view class="h7 txt-99 text-right">x{{child.number}}</view>
+      </view>
+    </view>
+    <view class="flex-row flex-bottom">
+      <view class="flex-1"></view>
+      <view class="h6 txt-33">共{{item.orderitem.length}}件 实付：</view>
+      <view class="h7 txt-33">¥</view>
+      <view class="txt-33 f-30">{{item.payment_amount}}</view>
+    </view>
+    <view class="lines"></view>
+    <view class="flex-row flex-center">
+      <image src="{{item.member_avatarUrl}}" class="touxiang"></image>
+      <view class="h6 txt-66 margin-left-10 flex-1">{{item.member_nickName}}</view>
+      <image src="{{uploadpath}}resource/{{res.right}}" class="righticon"></image>
+    </view>
+  </view>
+
+</view>

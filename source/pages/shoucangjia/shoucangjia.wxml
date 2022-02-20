@@ -1,0 +1,22 @@
+<view class="margin-30">
+
+
+  <view class="" >
+    <view wx:for="{{list}}" wx:key='k' class="margin-bottom-25" bindtap="todetail" id="{{item.community_id}}">
+      <view class="flex-row">
+        <image src="{{uploadpath}}community/{{item.img}}" class="imgs" mode="aspectFill"></image>
+        <view class="flex-1 margin-left-20">
+          <view class="h5 txt-33">{{item.community_name}}</view>
+          <view class="h6 txt-33 margin-top-10">5.0分 200人做过</view>
+          <view class="height-70"></view>
+          <view class="flex-row flex-center">
+            <image src="{{item.community_avatarUrl}}" class="touxiang"></image>
+            <view class="txt-99 h7 margin-left-10">{{item.community_nickName}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+</view>

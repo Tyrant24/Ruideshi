@@ -1,0 +1,171 @@
+<view class="fixedtop">
+  <view style="height:{{Custom.top}}px"></view>
+  <view class="flex-row flex-center">
+    <image src="{{uploadpath}}resource/{{res.back}}" mode="heightFix" class="back" bindtap="backPage"></image>
+    <image wx:if="{{info.member_id>0}}" src="{{info.member_avatarUrl}}" class="touxiang"></image>
+    <view wx:if="{{info.member_id>0}}" class="txt-33 h6">{{info.member_id_name}}</view>
+    <image wx:if="{{info.member_id<=0}}" src="{{uploadpath}}community/{{info.touxiang}}" class="touxiang"></image>
+    <view wx:if="{{info.member_id<=0}}" class="txt-33 h6">{{info.nickName}}</view>
+    <!-- <image src="{{uploadpath}}resource/{{res.vip}}" class="vip" mode="heightFix"></image> -->
+    <image src="{{uploadpath}}member/{{memberinfo.memberlevel_icon}}" mode="widthFix" class="vip"></image>
+  </view>
+</view>
+<view style="height:{{CustomBar}}px;"></view>
+<view class="pore">
+  <swiper class="lunbo" circular="true" current="{{currentIdx}}" bindchange="bindchange">
+    <swiper-item wx:for="{{info.lunbo}}" wx:key='k' class="lunbo">
+      <image src="{{uploadpath}}community/{{item.img}}" mode="aspectFit" style="width:100%;height:100%"></image>
+    </swiper-item>
+  </swiper>
+  <view class="indexs">{{currentIdx+1}}/{{info.lunbo.length}}</view>
+</view>
+
+
+<view class="menu">
+  <view class="txt-33 f-33 margin-bottom-40">{{info.name}}</view>
+  <import src="../../wxParse/wxParse.wxml" />
+
+  <view class='nostyle '>
+    <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+  </view>
+  <view class="flex-row flex-wrap">
+    <view wx:for="{{info.huati}}" class="huati h6">{{item.name}}</view>
+  </view>
+
+  <view class="flex-row flex-center margin-top">
+    <view class="h7 txt-99">{{info.shijian_formatting}}</view>
+    <view class="flex-1"></view>
+    <view class="h7 txt-99">{{info.shoucang}}次收藏 {{info.dianzan}}次赞</view>
+  </view>
+  <view class="flex-row flex-center" wx:if="{{totype=='A'}}">
+    <view class="flex-1"></view>
+    <view class="h6 margin-top-30" style="color: #FF6900;" bindtap="deleteword">删除</view>
+  </view>
+</view>
+
+
+<view class="pinglun">
+  <view class="h7 txt-99">共{{list.length}}条评论</view>
+  <view class="flex-row flex-center margin-top-30" bindtap="bindmember2" data-item="{{info}}">
+    <image src="{{memberinfo.avatarUrl}}" class="icon-60"></image>
+    <view class="w610">喜欢评论的人，做法一定超好吃～</view>
+  </view>
+
+  
+  <view class="margin-top-30" wx:for="{{list}}" wx:key='k'>
+    <view class="flex-row">
+      <image src="{{item.member_avatarUrl}}" class="icon-60" bindtap="bindmember" data-item="{{item}}"></image>
+      <view class="flex-1 margin-left-20">
+        <view class="flex-row flex-center">
+          <view class="h6 txt-99 " bindtap="bindmember" data-item="{{item}}">
+            {{item.member_id_name}}{{info.member_id==item.member_id?'（作者）：':''}}</view>
+          <view class="flex-1"></view>
+          <image src="{{uploadpath}}resource/{{item.isdianzan>0?res.dianzan2:res.dianzan}}" class="icon26"
+            bindtap="pldianzan" id="{{item.id}}"></image>
+          <view class="h6" style="color: #DC4A3D;" bindtap="pldianzan" id="{{item.id}}">{{item.dianzan}}</view>
+        </view>
+
+        <view class="h5 txt-33 margin-top-20" bindtap="bindmember" data-item="{{item}}">{{item.content}}</view>
+
+        <view class="plcon" wx:if="{{item.childlist.length>0}}">
+          <view wx:for="{{item.childlist}}" wx:key='k' wx:for-item='child'>
+            <view class="flex-row flex-center" bindtap="bindmember" data-item="{{item}}" data-child="{{child}}">
+              <!-- {{child.hfmember_nickName}} -->
+              <view class="h6 txt-33 ">回复{{child.hfmember_nickName}}{{info.member_id==child.hf_member_id?'（作者）':''}} ：
+              </view>
+              <view class="h6 txt-33  flex-1">{{child.content}}</view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+
+    </view>
+
+  </view>
+</view>
+<view class="height-200"></view>
+
+
+<view class="fixedbottom">
+  <view class="flex-row flex-center margin-left-30 margin-right-30">
+    <view class="flex-1 inputs">
+      <input type="text" class="h5" placeholder="{{plvalue}}" cursor-spacing="50" focus="{{showinput}}"
+        value="{{contents}}" adjust-position='false' hold-keyboard="{{showinput}}" bindconfirm="bindconfirm"
+        placeholder-class="txt-99"></input>
+    </view>
+    <image src="{{uploadpath}}resource/{{info.isdianzan>0?res.dianzan2:res.dianzan}}" class="icon-44"
+      bindtap="cpdianzan"></image>
+    <view class="f-30 txt-33 margin-left-10" bindtap="cpdianzan">{{info.dianzan}}</view>
+    <view class="w30"></view>
+    <image src="{{uploadpath}}resource/{{info.isshoucang>0?res.shoucang2:res.shoucang}}" class="icon-44"
+      bindtap="shoucang"></image>
+    <view class="f-30 txt-33 margin-left-10" bindtap="shoucang">{{info.shoucang}}</view>
+    <view class="w30"></view>
+    <button open-type="share" class="clear-button flex-row flex-center">
+      <image src="{{uploadpath}}resource/{{res.zhuanfa}}" class="icon-44"></image>
+      <view class="f-30 txt-33 margin-left-10">分享</view>
+    </button>
+
+  </view>
+</view>
+
+
+<view class="scfixedbottom" wx:if="{{isshowscj}}">
+  <view class="flex-row flex-center scchenggong">
+    <view class="txt-white h6 margin-left-30">已收藏</view>
+    <view class="flex-1"></view>
+    <view class="h6 margin-right-30" style="color: #FF6900;" bindtap="addscj">加入收藏夹</view>
+  </view>
+</view>
+<view class="scfixedbottom" wx:if="{{scjsuccess}}">
+  <view class="flex-row flex-center scchenggong">
+    <view class="txt-white h6 margin-left-30">已加入“{{scjsuccess_name}}”</view>
+    <view class="flex-1"></view>
+    <image src="{{uploadpath}}resource/{{res.right}}" class="icon-10 margin-right-30"></image>
+  </view>
+</view>
+
+
+<view class="mask" wx:if="{{xzscj || xjscj}}" bindtap="qxscj" catchtouchmove="{{xzscj || xjscj}}"></view>
+<view class="xzscj" wx:if="{{xzscj}}" catchtouchmove="{{xzscj || xjscj}}">
+  <view class="margin-30">
+    <view class="flex-row flex-center">
+      <view class="h5 txt-33">选择收藏夹</view>
+      <view class="flex-1"></view>
+      <view class="h5" style="color: #FF6900;" bindtap="chosexjcsj">新建收藏夹</view>
+    </view>
+    <view wx:if="{{myshoucangjia.length>0}}">
+      <view class="flex-row flex-center margin-top" wx:for="{{myshoucangjia}}" wx:key='k' bindtap="jiaruscj"
+        data-item="{{item}}">
+        <image src="{{uploadpath}}resource/{{res.mrshoucangjia}}" wx:if="{{item.img==''}}" class="mrshoucangjia">
+        </image>
+        <image src="{{uploadpath}}menushoucang/{{item.img}}" wx:else class="mrshoucangjia"></image>
+        <view>
+          <view class="h5 txt-33">{{item.name}}</view>
+          <view class="h6 txt-99 margin-top-20">{{item.count}}道菜谱</view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="h5 txt-33 text-center margin-top margin-bottom-40">暂无收藏夹，<text class="h5"
+        style="color: #FF6900;" bindtap="chosexjcsj">点击请新建收藏夹</text></view>
+  </view>
+</view>
+
+<view class="xjscj" wx:if="{{xjscj}}">
+  <view class="margin-30">
+    <view class="flex-row flex-center">
+      <view class="h5 txt-33">新建收藏夹</view>
+      <view class="flex-1"></view>
+      <view class="h5" style="color: #FF6900;" bindtap="quedingscj">确定</view>
+    </view>
+
+    <view class="flex-row margin-top">
+      <image src="{{uploadpath}}resource/{{res.mrshoucangjia}}" wx:if="{{scjimg==''}}" bindtap="uploadimg"
+        class="mrshoucangjia"></image>
+      <image src="{{uploadpath}}menushoucang/{{scjimg}}" wx:else bindtap="uploadimg" class="mrshoucangjia"></image>
+      <input type="text" value="{{scjname}}" bindinput="scjnameFn" placeholder="为你的收藏夹添加标题" class="h5"></input>
+    </view>
+
+  </view>
+</view>

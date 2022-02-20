@@ -1,0 +1,73 @@
+<view class="flex-row flex-column ">
+  <view class="height-40"></view>
+  <view class="pore">
+    <image src="{{uploadpath}}member/{{info.touxiang}}" wx:if="{{info.touxiang!=''}}" 
+      class="touxiang"></image>
+    <image src="{{info.avatarUrl}}" wx:if="{{info.touxiang==''&& info.avatarUrl!=''}}" 
+      class="touxiang"></image>
+    <image src="{{uploadpath}}resource/{{res.touxiang}}" wx:if="{{info.touxiang==''&& info.avatarUrl==''}}"
+       class="touxiang"></image>
+  </view>
+</view>
+<view class="height-50"></view>
+<view class="margin-40">
+
+  <view class="flex-row flex-center martb30">
+    <view class="f-30 txt-33">用户ID</view>
+    <!-- <view class="w60"></view> -->
+    <view class="txt-99 h5 margin-left-30">{{info.mobile}}</view>
+  </view>
+  <view class="lines"></view>
+  <view class="flex-row flex-center martb30">
+    <view class="f-30 txt-33">姓</view>
+    <view class="w60"></view>
+    <view class="txt-99 h5 flex-1 margin-left-30">{{info.xing}}</view>
+    <view class="f-30 txt-33">名</view>
+    <view class="w60"></view>
+    <view class="txt-99 h5 flex-1">{{info.ming}}</view>
+  </view>
+  <view class="lines"></view>
+
+  <view class="flex-row flex-center martb30">
+    <view class="f-30 txt-33">性别</view>
+    <view class="w60"></view>
+    <view class="txt-99 h5">{{info.gender==''?'':info.gender_name}}</view>
+  </view>
+
+
+  <view class="lines"></view>
+
+  <view class="flex-row flex-center martb30">
+    <view class="f-30 txt-33">生日</view>
+    <view class="w60"></view>
+    <view class="txt-99 h5">{{info.birthday}}</view>
+  </view>
+
+  <view class="lines"></view>
+
+  <view class="flex-row flex-center martb30">
+    <view class="f-30 txt-33">喜好</view>
+    <view class="w60"></view>
+    <view class="flex-row flex-wrap">
+      <view class="txt-99 h5" wx:for="{{info.xihao}}" wx:key='k' class="xhao">{{item.name}}</view>
+    </view>
+   
+  </view>
+  <view class="lines"></view>
+
+  <!-- <view class="flex-row flex-center martb30">
+    <view class="f-30 txt-33">家乡</view>
+    <view class="w60"></view>
+    <view class="txt-99 h5">{{info.jiaxiang}} </view>
+  </view>
+
+  <view class="lines"></view>
+  <view class="flex-row  martb30">
+    <view class="f-30 txt-33">简介</view>
+    <view class="w60"></view>
+    <view class="txt-99 h5">{{info.jianjie}}</view>
+  </view> -->
+
+
+
+</view>

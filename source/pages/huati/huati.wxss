@@ -1,0 +1,81 @@
+/* pages/huati/huati.wxss */
+Page {
+  background: #F9F9F8;
+}
+.whiteback {
+    width: 18rpx;
+    height: 32rpx;
+    margin-left: 40rpx;
+}
+.fixedtop {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  /* height: 400rpx; */
+}
+.topcon{
+  width: 100%;
+  height: 400rpx;
+  background-size: 100% 100%;
+}
+.glines{
+  width: 2rpx;
+  height: 20rpx;
+  background: #CDCDCD;
+  margin: 0 20rpx;
+}
+.padding30{
+  padding: 30rpx ;
+  background: #F9F9F8;
+}
+.height-500 {
+  height: 500rpx;
+}
+
+
+.cover{
+  width: 350rpx;
+  /* height: 350rpx; */
+  border-radius: 10rpx 10rpx 0 0;
+}
+.menu{
+  width: 350rpx ;
+  border-radius: 10rpx;
+  background: #ffffff;
+  margin-bottom: 10rpx;
+  break-inside:avoid;
+}
+.touxiang {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+.menucon{
+  padding: 17rpx 9rpx ; 
+}
+.margin-top-25 {
+  margin-top: 25rpx;
+}
+.dianzan {
+  width: 26rpx;
+  height: 24rpx;
+  margin-right: 9rpx;
+}
+
+.margin20{
+  margin:  0 20rpx 20rpx;
+}
+
+.canyu {
+  width: 180rpx;
+  height: 68rpx;
+  background: #FF6900;
+  border-radius: 34rpx;
+  position: fixed;
+  bottom: 20rpx;
+  left: 285rpx;
+  z-index: 100;
+}

@@ -1,0 +1,135 @@
+<!--pages/creataftersale/creataftersale.wxml-->
+
+<view class="padding-20 margin-30 radius-10 bg-white">
+
+  <view class="flex-row flex-center">
+    <image src="{{uploadpath}}goods/{{info.coverimg}}" class="icon-80"></image>
+    <view class="margin-left-20 flex-1">
+
+      <view class="h6 txt-bold">{{info.goods_name}}</view>
+      <view class="h7 txt-gray margin-top-30">{{info.specifications_name}}</view>
+
+      <view class="flex-row flex-center margin-top-30">
+        <view class="h7   txt-orange">￥</view>
+        <view class="h6   txt-orange txt-bold flex-1">{{info.unitprice}}</view>
+        <!-- <view class="txt-gray h7 flex-1 margin-left-10" style="text-decoration:line-through">
+          ￥{{info.goods_original_price}}
+        </view> -->
+        <view class="txt-gray h7">x{{info.number}}</view>
+      </view>
+
+    </view>
+  </view>
+
+</view>
+
+<view class="padding-20 margin-30 radius-10 bg-white">
+
+  <view class="flex-row flex-center">
+    <view class="h6 flex-1">售后方式</view>
+    <view class="h6" bindtap="bindguige" id="A" >{{way_name}}</view>
+    <image src="{{uploadpath}}resource/{{res.right}}" bindtap="bindguige" id="A" class="right margin-left-20"></image>
+  </view>
+
+
+  <view class="flex-row flex-center margin-top-30">
+    <view class="h6 flex-1">问题描述</view>
+    <view class="h6" bindtap="bindguige" id="B">{{reason_name}}</view>
+    <image src="{{uploadpath}}resource/{{res.right}}" bindtap="bindguige" id="B" class="right margin-left-20"></image>
+  </view>
+
+</view>
+
+<view class="padding-20 margin-30 radius-10 bg-white">
+  <view class="h6">退货地址</view>
+  <textarea placeholder="请填写收货地址" class="text h6 margin-top-10"    
+    bindinput="addressinput"></textarea> 
+  <!-- <input class="h6" type="text" placeholder="请填写收货地址" bindinput="addressinput"></input> -->
+</view>
+
+<view class="padding-20 margin-30 radius-10 bg-white">
+  <view class="h6">退款说明</view>
+
+  <textarea placeholder="请描述..." class="text h6 margin-top-10" value="{{state}}"  
+    bindinput="bindinput"></textarea>
+</view>
+
+<view class="padding-20 margin-30 radius-10 bg-white">
+  <view class="h6">上传图片凭证</view>
+
+  <view class='flex-row flex-center flex-wrap'>
+
+    <view class='margin-20 flex-row  ' wx:for="{{images}}" wx:key="k" wx:for-index="idx">
+      <image src='{{uploadpath}}aftersale/{{item}}' id="{{idx}}" bindtap='minusImg' class='icon-60 padding-top-20'>
+      </image>
+    </view>
+
+    <view class=' flex-row   ' wx:if="{{images.length<4}}" bindtap='uploadimg'>
+      <view class='flex-1'></view>
+      <image src='{{uploadpath}}resource/{{res.uploadimg2}}' class='icon-60 margin-20'></image>
+      <view class='flex-1'></view>
+    </view>
+
+  </view>
+
+</view>
+
+<view class="padding-20 margin-30 radius-10 bg-white">
+  <view class="h6">上传视频凭证</view>
+
+   <video  play-btn-position="center" src="{{uploadpath}}aftersale/{{video}}" wx:if="{{video!=''}}" class="myvideo"></video>
+   <view class="padding-20 h5 txt-red" bindtap="minusVideo"  wx:if="{{video!=''}}">删除</view>
+
+    <view class=' '   bindtap='video'> 
+      <image src='{{uploadpath}}resource/{{res.uploadimg2}}' class='icon-60 margin-20' wx:if="{{video==''}}"></image> 
+    </view>
+ 
+
+</view>
+
+<view class="height-150"></view>
+
+<view class="under_block ">
+  <view class=" padding-20">
+    <view class="under_button bg-orange txt-white h5 " bindtap="submit">提交
+    </view>
+  </view>
+  <view class="height-40"></view>
+</view>
+
+
+<view class="overlay" wx:if="{{overlay}}" bindtap="bindclose"></view>
+
+<view class="coupon_block" wx:if="{{overlay}}">
+
+  <view class=" block2 ">
+
+    <view class="f-30 txt-bold text-center margin-top-20">{{overlay_type=='A'?'售后方式':'退款原因'}}</view>
+    <image src="{{uploadpath}}resource/{{res.close}}" class="icon_close margin-top-20" bindtap="bindclose"></image>
+
+    <view class="flex-row flex-center margin-30" wx:if="{{overlay_type=='A'}}" bindtap="chooseway" id="{{idx}}"
+      wx:for="{{waylist}}" wx:for-index="idx">
+      <view class="h5 flex-1">{{item.name}}</view>
+      <image src="{{uploadpath}}resource/{{way_id==idx?res.chooseicon:res.notchooseicon}}" class="chooseicon">
+      </image>
+    </view>
+
+    <view class="flex-row flex-center margin-30" wx:if="{{overlay_type=='B'}}" bindtap="choosereason" id="{{idx}}"
+      wx:for="{{reasonlist}}" wx:for-index="idx">
+      <view class="h5 flex-1">{{item.name}}</view>
+      <image src="{{uploadpath}}resource/{{reason_id==idx?res.chooseicon:res.notchooseicon}}" class="chooseicon">
+      </image>
+    </view>
+
+    <view class="height-150"></view>
+
+    <view class="confirm">
+
+      <view class="padding-20">
+        <view class="confirm_button bg-orange h5 txt-white flex-1" bindtap="bindclose">确认</view>
+      </view>
+    </view>
+
+  </view>
+
+</view>

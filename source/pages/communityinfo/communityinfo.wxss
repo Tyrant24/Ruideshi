@@ -1,0 +1,173 @@
+/* pages/communityinfo/communityinfo.wxss */
+.fixedtop {
+  position: fixed;
+  background: #ffffff;
+  z-index: 100;
+  width: 100vw;
+  padding-bottom: 14rpx;
+}
+.back{
+  width: 18rpx;
+  height: 33rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+}
+.touxiang{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.vip{
+  width: 48rpx;
+  height: 24rpx;
+  margin-left: 9rpx;
+}
+
+.lunbo {
+  width: 100vw;
+  height: 872rpx;
+}
+.indexs {
+  padding: 8rpx 23rpx;
+  border-radius: 20rpx;
+  background: rgba(53,47,50, 0.6);
+  color: #FFFFFF;
+  font-size: 24rpx;
+  position: absolute;
+  bottom: 20rpx;
+  right: 30rpx;
+  z-index: 100;
+}
+.pore {
+  position: relative;
+}
+.f-33 {
+  font-size: 33rpx !important;
+}
+
+.nostyle view,navigator,input,text,textarea{
+  color:#333333;
+  font-size:24rpx;
+  word-break: normal;
+}
+.huati {
+    color: #947559;
+    margin-left: 10rpx;
+    margin-bottom: 10rpx;
+}
+
+.menu {
+  margin: 40rpx 30rpx 0;
+  padding-bottom: 40rpx;
+  border-bottom: 1rpx solid  #EEEEEE;
+}
+.pinglun {
+  margin: 30rpx;
+}
+
+.icon-60{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+
+.w610 {
+  width: 590rpx;
+  height: 60rpx;
+  background: #F9F9F8;
+  border-radius: 30rpx;
+  color: #999999;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  padding-left: 20rpx;
+  margin-left: 20rpx;
+}
+.icon26 {
+  width: 26rpx;
+  height: 24rpx;
+  margin-right: 12rpx;
+}
+.height-200 {
+  height: 200rpx;
+}
+.icon-44{
+  width: 44rpx;
+  height: 44rpx;
+}
+.fixedbottom{
+  width: 100vw;
+  padding: 14rpx 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background: #ffffff;
+  border-top: 1rpx solid #EEEEEE;
+}
+.inputs{
+  padding: 22rpx 20rpx;
+  background: #F9F9F8;
+  border-radius: 35rpx;
+  margin-right: 18rpx;
+}
+.margin-right-30{
+  margin-right: 30rpx;
+}
+.w30 {
+  width: 30rpx;
+}
+.plcon {
+  background: #F9F9F8;
+  border-radius: 10rpx;
+  padding: 18rpx;
+  margin-top: 19rpx;
+}
+.scfixedbottom {
+  width: 690rpx;
+  position: fixed;
+  bottom: 140rpx;
+  left: 30rpx;
+  z-index: 100;
+}
+.scchenggong{
+  width: 690rpx;
+  height: 88rpx;
+  background: #352F32;
+  border-radius: 10rpx;
+}
+
+.mask{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000000;
+  opacity: 0.5;
+  z-index: 101;
+}
+.xzscj {
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #FFFFFF;
+  border-radius: 20rpx 20rpx 0 0;
+  z-index: 102;
+}
+
+.xjscj{
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #FFFFFF;
+  border-radius: 20rpx 20rpx 0 0;
+  z-index: 103;
+}
+.mrshoucangjia {
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 20rpx;
+}

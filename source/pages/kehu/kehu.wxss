@@ -1,0 +1,36 @@
+/* pages/kehu/kehu.wxss */
+
+.searchbox {
+  width: 690rpx;
+  height: 54rpx;
+  background: #EEEEEE;
+  border-radius: 27rpx;
+  margin-bottom: 10rpx;
+}
+.icon30 {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 21rpx;
+  margin-right: 10rpx;
+}
+
+.touxiang{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.vipicon{
+  width: 50rpx;
+}
+.icon24{
+  width: 24rpx;
+  height: 24rpx;
+}
+.lines {
+  width: 100%;
+  height: 1rpx;
+  background: #EEEEEE;
+  margin: 40rpx 0 30rpx;
+}

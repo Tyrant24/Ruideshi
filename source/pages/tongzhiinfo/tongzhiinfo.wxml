@@ -1,0 +1,25 @@
+<view>
+
+  <view wx:for="{{list}}" wx:key='k'>
+    <view class="text-center txt-99 h7 margin-top-20">{{item.shijian}}</view>
+    <view wx:if="{{item.community_id>0}}" class="margin30">
+      <image src="{{uploadpath}}community/{{item.community_img}}" mode="aspectFill" class="community_img"></image>
+      <view class="h5 txt-33 margin-top-20 margin-left-20">{{item.summary}}</view>
+      <view class="flex-row flex-center margin-top-20 margin-left-20">
+        <image src="{{uploadpath}}inst/{{instinfo.systouxiang}}" class="icon radius-50"></image>
+        <view class="h6 txt-99 margin-left-10">{{instinfo.sysname}}</view>
+      </view>
+    </view>
+    <view wx:else class="infomsg">
+      <view class="h5 txt-33">{{item.name}}</view>
+      <view class="margin-top-20">
+        <text class="h6 txt-33">{{item.summary}}</text>
+      </view>
+      <view class="flex-row flex-center margin-top-20 ">
+        <image src="{{uploadpath}}inst/{{instinfo.systouxiang}}" class="icon radius-50"></image>
+        <view class="h6 txt-99 margin-left-10">{{instinfo.sysname}}</view>
+      </view>
+    </view>
+  </view>
+
+</view>

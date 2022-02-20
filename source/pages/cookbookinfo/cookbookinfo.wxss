@@ -1,0 +1,21 @@
+/* pages/cookbookinfo/cookbookinfo.wxss */
+
+.img{
+  width: 100%;
+  height: 540rpx;
+}
+.processimg{
+  width: 100%;
+  height: 370rpx;
+}
+.textinput{
+  width: 260rpx;
+height: 70rpx;
+background: #F9F9F8;
+border-radius: 36rpx;
+padding-left: 10rpx;
+}
+.under_block{
+  position: fixed;
+  width: 100vw; 
+}

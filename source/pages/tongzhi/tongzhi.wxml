@@ -1,0 +1,83 @@
+<view class="padding23 bg-white">
+  <view class="flex-row flex-center margin-bottom-25" bindtap="totongzhi">
+    <image src="{{uploadpath}}resource/{{res.xitongtz}}" class="icon95"></image>
+    <view class="flex-1 ">
+      <view class="flex-row flex-center">
+        <view class="flex-1">
+          <view class="h5 txt-33">通知</view>
+          <view class="h6 txt-99 margin-top-20 chaochu">{{info.syscon}}</view>
+        </view>
+        <view>
+          <view class="h7 txt-99 ">{{info.sysshijian}}</view>
+          <view class="flex-row flex-center margin-top-20">
+            <view class="flex-1"></view>
+            <view class="nums " wx:if="{{info.sysnum>0}}">{{info.sysnum}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="lines"></view>
+    </view>
+
+  </view>
+  <view class="flex-row flex-center  margin-bottom-25" bindtap="topinglun" wx:if="{{info!=null && info.plmember_name!=''}}">
+    <image src="{{uploadpath}}resource/{{res.pingluntz}}" class="icon95"></image>
+    <view class="flex-1 ">
+      <view class="flex-row flex-center">
+        <view class="flex-1">
+          <view class="h5 txt-33">评论</view>
+          <view class="h6 txt-99 margin-top-20" >{{info.plmember_name}}: {{info.plcon}}</view>
+        </view>
+        <view>
+          <view class="h7 txt-99">{{info.plshijian}}</view>
+          <view class="flex-row flex-center margin-top-20">
+            <view class="flex-1"></view>
+            <view class="nums " wx:if="{{info.pltznum>0}}">{{info.pltznum}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="lines"></view>
+    </view>
+
+  </view>
+  <view class="flex-row flex-center  margin-bottom-25" bindtap="toshoucang" wx:if="{{info!=null && info.scmember_name!=''}}">
+    <image src="{{uploadpath}}resource/{{res.shoucangtz}}" class="icon95"></image>
+    <view class="flex-1 ">
+      <view class="flex-row flex-center">
+        <view class="flex-1">
+          <view class="h5 txt-33">收藏</view>
+          <view class="h6 txt-99 margin-top-20">{{info.scmember_name}}收藏了你的作品</view>
+        </view>
+        <view>
+          <view class="h7 txt-99">{{info.scshijian}}</view>
+          <view class="flex-row flex-center margin-top-20">
+            <view class="flex-1"></view>
+            <view class="nums " wx:if="{{info.sctznum>0}}">{{info.sctznum}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="lines"></view>
+    </view>
+
+  </view>
+  <view class="flex-row flex-center  " bindtap="todianzan" wx:if="{{info!=null && info.dzmember_name!=''}}">
+    <image src="{{uploadpath}}resource/{{res.dianzantz}}" class="icon95"></image>
+    <view class="flex-1 ">
+      <view class="flex-row flex-center">
+        <view class="flex-1">
+          <view class="h5 txt-33">点赞</view>
+          <view class="h6 txt-99 margin-top-20">{{info.dzmember_name}}点赞了你的作品</view>
+        </view>
+        <view class="">
+          <view class="h7 txt-99">{{info.dzshijian}}</view>
+          <view class="flex-row flex-center margin-top-20">
+            <view class="flex-1"></view>
+            <view class="nums " wx:if="{{info.dztznum>0}}">{{info.dztznum}}</view>
+          </view>
+
+        </view>
+      </view>
+      <view class="lines"></view>
+    </view>
+
+  </view>
+</view>

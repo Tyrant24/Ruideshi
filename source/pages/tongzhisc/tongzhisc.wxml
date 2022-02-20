@@ -1,0 +1,14 @@
+
+
+<view class="bg-white">
+    <view wx:for="{{list}}" wx:key='k' class="padding25">
+      <view class="flex-row flex-center">
+        <image src="{{item.member_avatarUrl}}" class="touxiang"></image>
+        <view class="flex-1">
+          <view class="txt-33 h6">{{item.member_nickName}}</view>
+          <view class="txt-99 h6 margin-top-5">{{item.shijian}} · 收藏了你的作品</view>
+        </view>
+        <image src="{{uploadpath}}community/{{item.community_img}}" class="community_img"></image>
+      </view>
+    </view>
+</view>

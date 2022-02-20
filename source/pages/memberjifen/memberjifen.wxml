@@ -1,0 +1,67 @@
+<view class="navtop">
+  <view class="flex-row flex-center">
+    <image src="{{uploadpath}}resource/{{res.jifen}}" class="jifen"></image>
+    <view class="flex-1 margin-left-40">
+      <view class="txt-33 h6">可用积分</view>
+      <view class="txt-33 f-60 margin-top-20">{{memberinfo.jifen}}</view>
+    </view>
+    <view class="h6 txt-99" bindtap="showguize">规则</view>
+    <image src="{{uploadpath}}resource/{{res.right}}"  bindtap="showguize" class="icon-10 margin-left-10"></image>
+  </view>
+
+</view>
+
+
+<view class="mingxi">
+  <view class="flex-row flex-center">
+    <view class="olines"></view>
+    <view class="h5 txt-33">积分明细</view>
+  </view>
+  <picker mode="date" bindchange="bindchange" fields="month">
+    <view class="flex-row flex-center margin-top-30 margin-left-20">
+      <view class="h6 txt-33">{{choseriqi}}</view>
+      <image src="{{uploadpath}}resource/{{res.xiala}}" class="xiala"></image>
+    </view>
+  </picker>
+
+  <view class="lines "></view>
+  <view wx:for="{{list}}" wx:key='k' wx:for-index="idx" class="margin-left-20">
+    <view class="flex-row ">
+      <view class="flex-row flex-column">
+        <view class="h6 txt-33">{{item.riqi}}</view>
+        <view class="h7 txt-99 margin-top-20">{{item.riqitime}}</view>
+      </view>
+      <view class="w50"></view>
+      <view class="flex-1 ">
+        <view class="flex-row flex-center">
+          <view class="flex-1">
+            <view class="txt-33 h6">{{item.name}}</view>
+            <view class="h7 txt-99 margin-top-20" wx:if="{{item.chongzhi_orderno!='' || item.order_orderno!=''}}">
+              订单号：{{item.chongzhi_orderno==''?item.order_orderno:item.chongzhi_orderno}}</view>
+              <view wx:else class="height-20"></view>
+          </view>
+          <view class="{{item.jifen>0?'txt-act':'txt-33'}} h6">{{item.jifen>0?'+'+item.jifen:item.jifen}}</view>
+        </view>
+        <view wx:if="{{(idx+1)!=list.length}}" class="lines"></view>
+      </view>
+
+    </view>
+
+  </view>
+
+</view>
+<view class="text-center txt-99 h7">没有更多了～</view>
+
+
+
+<view class="mask" wx:if="{{isguize}}"  bindtap="showguize"></view>
+<view class="fixedmid" wx:if="{{isguize}}" >
+  <view class="flex-row flex-center">
+    <view class="text-center flex-1  txt-33 txt-bold">积分规则</view>
+    <image src="{{uploadpath}}resource/{{res.close}}"  bindtap="showguize" class="icon"></image>
+  </view>
+  
+  <scroll-view class="margin-top" scroll-y="true" style="max-height:50vh">
+    <text class="h6 txt-33">{{instinfo.jifenguize}}</text>
+  </scroll-view>
+</view>

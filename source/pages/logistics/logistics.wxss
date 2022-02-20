@@ -1,0 +1,4 @@
+/* pages/logistics/logistics.wxss */
+.txt-b{
+  color: rgb(65, 65, 255);
+}

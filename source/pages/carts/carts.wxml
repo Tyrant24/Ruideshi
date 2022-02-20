@@ -1,0 +1,73 @@
+<!--pages/carts/carts.wxml-->
+
+<view class="flex-row flex-center padding_top bg-white">
+  <view class="flex-1"></view>
+  <view class="line"></view>
+  <view class="h6 padding-left-20" bindtap="bindedit">编辑</view>
+</view>
+
+<view class="padding_goods bg-white margin-top-20 flex-row flex-center" wx:for="{{list}}" wx:for-index="idx"
+  style="position:relative">
+  <image src="{{uploadpath}}resource/{{item.choose?res.chooseicon:res.notchooseicon}}" class="chooseicon"
+    bindtap="choose_goods" data-index="{{idx}}"></image>
+  <image src="{{uploadpath}}goods/{{item.coverimg}}" class="goodsimg margin-left-20" bindtap="choose_goods"
+    data-index="{{idx}}">
+  </image>
+
+  <view class="margin-left-20 flex-1" bindtap="choose_goods" data-index="{{idx}}">
+    <view class="txt-bold h6">{{item.goods_name}}</view>
+    <view class="h7 txt-gray margin-top-20">{{item.specifications_name}}</view>
+
+    <view class="flex-row flex-bottom margin-top-20">
+      <view class="h7   txt-orange">￥</view>
+      <view class=" txt-orange txt-bold">{{item.unitprice}}</view>
+      <view class="txt-gray h7 margin-left-10  " style="text-decoration:line-through">￥{{item.goods_original_price}}
+      </view>
+
+      <!-- <view class="flex-1"></view> -->
+
+    </view>
+
+  </view>
+
+
+  <view class=" subtract_block">
+
+    <view class="flex-row ">
+      <view class="add_subtract left_radius flex-row flex-center" bindtap="bindsubtract" id="{{item.id}}"
+        data-count="{{item.count}}" data-goods_id="{{item.goods_id}}" data-index="{{idx}}">
+        <view class="flex-1"></view>
+        <image src="{{uploadpath}}resource/{{res.subtract}}" class="icon_subtract"></image>
+        <view class="flex-1"></view>
+      </view>
+      <view class="h7 number_block">{{item.count}}</view>
+      <view class="add_subtract right_radius" bindtap="bindadd" id="{{item.goods_id}}" data-index="{{idx}}" data-specifications="{{item.specifications}}" data-specifications_name="{{item.specifications_name}}" data-unitprice="{{item.unitprice}}" data-coverimg="{{item.coverimg}}">
+        <image src="{{uploadpath}}resource/{{res.add}}" class="icon_add"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="text-center" wx:if="{{list.length==0}}">
+  <image src="{{uploadpath}}resource/{{res.nodata}}" class="nodata" /> 
+</view>
+
+<view class="height-150"></view>
+
+<view class="under_block bg-white">
+  <view class="flex-row flex-center padding-20">
+    <image src="{{uploadpath}}resource/{{all?res.chooseicon:res.notchooseicon}}" class="chooseicon" bindtap="choose_all"></image>
+    <view class="h5 txt-bold flex-1  padding-left-20" bindtap="choose_all">全选</view>
+
+    <view class="h5 txt-bold">合计：</view>
+    <view class="flex-row flex-bottom">
+      <view class="h7   txt-orange">￥</view>
+      <view class=" txt-orange txt-bold">{{amount}}</view>
+    </view>
+
+    <view class="balance h6 margin-left-20" wx:if="{{!edit}}" bindtap="bindbalance">结算（{{choosenumber}}）</view>
+    <view class="delete h6 margin-left-20"  wx:if="{{edit}}" bindtap="binddelete">删除</view>
+
+  </view>
+  <view class="height-40"></view>
+</view>

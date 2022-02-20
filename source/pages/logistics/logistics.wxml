@@ -1,0 +1,21 @@
+<!--pages/logistics/logistics.wxml-->
+
+<view class="padding">
+    <view class="flex-row flex-center">
+        <image src="{{logo}}" mode="aspectFit" wx:if="{{logo!=''}}" class="icon-50"></image>
+        <view class="txt-bold f32 margin-left-20 h5">{{expTextName}}</view>
+        <view class=" f32 margin-left-20 h5">{{mailNo}}</view>
+        <view class="padding-10 txt-blue h7" bindtap="copy" id='{{mailNo}}' >复制</view>
+    </view>
+    <view class="f28 margin-top-15 h5   txt-bold">联系电话：<span class="txt-blue" bindtap="phoneCall" id="{{tel}}">{{tel}}</span></view>
+
+    <view class="  margin-top padding-bottom-20" wx:for="{{list}}" wx:for-index="index" style="border-bottom:2rpx solid #f0f0f0">
+
+        <view class="h5 txt-bold">{{item.time}}</view>
+        <view class="txt-bold h5 margin-top-10">{{item.context}}</view>
+        <!-- <view class="flex-row flex-center  margin-top-15 margin-bottom-10">
+            <view class="flex-1"></view>
+        </view> -->
+    </view>
+</view>
+<view class="height-100"></view>

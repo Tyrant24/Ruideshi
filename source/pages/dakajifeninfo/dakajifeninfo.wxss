@@ -1,0 +1,13 @@
+/* pages/dakajifeninfo/dakajifeninfo.wxss */
+Page{
+  background: #f3f3f3;
+}
+.paddings{
+  padding: 30rpx 0 30rpx 0;
+  margin: 0 30rpx 0 30rpx;
+  border-bottom: 2rpx solid #EEEEEE;
+}
+.code{
+  width: 460rpx;
+  height: 460rpx;
+}

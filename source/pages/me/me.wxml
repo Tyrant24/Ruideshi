@@ -1,0 +1,285 @@
+<view>
+  <view style="height:{{Custom.top}}px;"></view>
+  <!-- <view class="flex-row flex-center">
+    <image src="{{uploadpath}}resource/{{memberinfo.infonum>0?res.xiaoxi2:res.xiaoxi}}" bindtap="tongzhi"
+      class="xiaoxi">
+    </image>
+    <view class="w40"> </view>
+    <image src="{{uploadpath}}resource/{{res.saoyisao}}" bindtap="toscan" class="saoyisao">
+    </image>
+  </view> -->
+
+</view>
+
+
+<view class="mine">
+  <button bindtap="bindgetUserProfile" class="clear-button"
+    wx:if="{{memberinfo==null || (memberinfo.avatarUrl==''&& memberinfo.nickName=='')}}">
+    <view class="flex-row flex-center">
+      <image src="{{uploadpath}}resource/{{res.touxiang}}"
+        wx:if="{{memberinfo.avatarUrl=='' && memberinfo.touxiang==''}}" class="touxiang"></image>
+      <image src="{{memberinfo.avatarUrl}}" class="touxiang"
+        wx:if="{{memberinfo.touxiang=='' && memberinfo.avatarUrl!=''}}"></image>
+      <image src="{{uploadpath}}member/{{memberinfo.touxiang}}" class="touxiang" wx:if="{{memberinfo.touxiang!=''}}">
+      </image>
+      <view class="flex-1 margin-left-20">
+        <view class="flex-row flex-center">
+          <view class="txt-bold txt-33 h5">点击登录</view>
+          <!-- <image src="{{uploadpath}}resource/{{res.vip}}" class="vip"></image> -->
+        </view>
+
+        <!-- <view class="h5 txt-66 margin-top-10">牛肉粥yyds！</view> -->
+      </view>
+
+
+      <image src="{{uploadpath}}resource/{{res.right}}" class="icon-15"></image>
+    </view>
+  </button>
+  <view class="flex-row flex-center" wx:else>
+    <button bindtap="bindgetUserProfile" class="clear-button">
+      <image src="{{uploadpath}}resource/{{res.touxiang}}"
+        wx:if="{{memberinfo.avatarUrl=='' && memberinfo.touxiang==''}}" class="touxiang"></image>
+      <image src="{{memberinfo.avatarUrl}}" class="touxiang"
+        wx:if="{{memberinfo.touxiang=='' && memberinfo.avatarUrl!=''}}"></image>
+      <image src="{{uploadpath}}member/{{memberinfo.touxiang}}" class="touxiang" wx:if="{{memberinfo.touxiang!=''}}">
+      </image>
+    </button>
+    <view class="flex-1 margin-left-20">
+      <view class="flex-row flex-bottom">
+        <view class="txt-bold txt-33 h5">{{memberinfo.nickName}}</view>
+        <!-- <image src="{{uploadpath}}resource/{{res.vip}}" class="vip"></image> -->
+        <image src="{{uploadpath}}member/{{memberinfo.memberlevel_icon}}" mode="heightFix" class="vip"></image>
+      </view>
+      <view class="flex-row flex-center ">
+        <view class="h5 txt-66 margin-top-10 chaochu">{{memberinfo.xihao_name}}</view>
+      </view>
+
+    </view>
+    <view class="h6 txt-orange txt-bold margin-right-20" wx:if="{{memberinfo.u_salesperson!=''}}">专属销售</view>
+
+    <view class="margin-right-20" wx:if="{{memberinfo.u_salesperson!=''}}">
+      <image wx:if="{{memberinfo.member_touxiang==''}}" src="{{memberinfo.member_avatarUrl}}" class="icon-30 radius-50">
+      </image>
+      <image wx:if="{{memberinfo.member_touxiang!=''}}" src="{{uploadpath}}member/{{memberinfo.member_touxiang}}"
+        class="icon-30 radius-50"></image>
+      <view class="margin-top-5 h7 txt-gray">{{memberinfo.u_member_id_name}}</view>
+    </view>
+
+
+    <image src="{{uploadpath}}resource/{{res.right}}" bindtap="tomember" class="icon-15"></image>
+  </view>
+  <view class="glines margin-top"></view>
+  <view class="flex-row flex-center margin-top-30">
+    <view class="flex-1 flex-row flex-column" bindtap="toshoucang">
+      <view class="txt-33 txt-bold h5">{{memberinfo.shoucangnum}}</view>
+      <view class="h6 txt-66">收藏</view>
+    </view>
+    <view class="flex-1 flex-row flex-column" bindtap="tocoupon">
+      <view class="txt-33 txt-bold h5">{{memberinfo.couponsnum}}</view>
+      <view class="h6 txt-66">优惠券</view>
+    </view>
+    <view class="flex-1 flex-row flex-column" bindtap="tojifen">
+      <view class="txt-33 txt-bold h5">{{memberinfo.jifen}}</view>
+      <view class="h6 txt-66">积分</view>
+    </view>
+  </view>
+</view>
+
+<view class="huiyuan" wx:if="{{memberinfo.issale==1}}">
+  <view class="flex-row flex-center kthuiyuan">
+    <image src="{{uploadpath}}resource/{{res.huangguan}}" class="icon"></image>
+    <view class="txt-bold h6 margin-left-20" style="color: #F6E9C9;">开通会员尊享更多好课</view>
+    <view class="flex-1"></view>
+    <view class="ljkt" bindtap="tohuiyuan">立即开通</view>
+  </view>
+  <view class="height-50"></view>
+  <view class="flex-row flex-center">
+    <view class="flex-1 flex-row flex-column" bindtap="tokehuorder">
+      <image src="{{uploadpath}}resource/{{res.kehudingdan}}" class="icon54"></image>
+      <view class="txt-33 h6 margin-top-10">客户订单</view>
+    </view>
+    <view class="flex-1 flex-row flex-column" bindtap="navtoPage" data-page="kehushouhou">
+      <image src="{{uploadpath}}resource/{{res.khshouhougenzhong}}" class="icon54"></image>
+      <view class="txt-33 h6 margin-top-10">售后跟踪</view>
+    </view>
+    <view class="flex-1 flex-row flex-column" bindtap="tokehu">
+      <image src="{{uploadpath}}resource/{{res.kehuxinxi}}" class="icon54"></image>
+      <view class="txt-33 h6 margin-top-10">客户信息</view>
+    </view>
+    <view class="flex-1 flex-row flex-column" bindtap="fxfenxiang">
+      <image src="{{uploadpath}}resource/{{res.fenxiaofenxiang}}" class="icon54"></image>
+      <view class="txt-33 h6 margin-top-10">分销分享</view>
+    </view>
+  </view>
+  <view class="flex-row flex-center  margin-top">
+
+
+    <view class="  flex-row flex-column margin-left-40" bindtap="navtoPage" data-page="dakajifen">
+      <image src="{{uploadpath}}resource/{{res.kehudingdan}}" class="icon54"></image>
+      <view class="txt-33 h6 margin-top-10">打卡积分</view>
+    </view>
+
+    <view class="  flex-row flex-column margin-left-70" bindtap="hexiao">
+      <image src="{{uploadpath}}resource/{{res.khshouhougenzhong}}" class="icon54"></image>
+      <view class="txt-33 h6 margin-top-10">扫码核销</view>
+    </view>
+
+    <view class="flex-1"></view>
+  </view>
+  <view class="height-40"></view>
+</view>
+
+<view class="huiyuan">
+  <view class="flex-row flex-center kthuiyuan" wx:if="{{memberinfo.issale==0}}">
+    <image src="{{uploadpath}}resource/{{res.huangguan}}" class="icon"></image>
+    <view class="txt-bold h6 margin-left-20" style="color: #F6E9C9;">开通会员尊想更多好课</view>
+    <view class="flex-1"></view>
+    <view class="ljkt" bindtap="tohuiyuan">立即开通</view>
+  </view>
+  <view class="height-50"></view>
+  <view class="flex-row flex-center">
+    <view class="flex-1 flex-row flex-column" bindtap="navtoPage" data-page="myactivity">
+      <image src="{{uploadpath}}resource/{{res.wodehuodong}}" class="icon48"></image>
+      <view class="txt-33 h6 margin-top-10">我的活动</view>
+    </view>
+    <view class="flex-1 flex-row flex-column" bindtap="navtoPage" data-page="mykecheng">
+      <image src="{{uploadpath}}resource/{{res.wodekecheng}}" class="icon48"></image>
+      <view class="txt-33 h6 margin-top-10">我的课程</view>
+    </view>
+    <!-- <view class="flex-1 flex-row flex-column">
+      <image src="{{uploadpath}}resource/{{res.wodeqianbao}}" class="icon48"></image>
+      <view class="txt-33 h6 margin-top-10">我的钱包</view>
+    </view> -->
+    <view class="flex-1 flex-row flex-column" bindtap="navtoPage" data-page="addresslist" data-param="type=B">
+      <image src="{{uploadpath}}resource/{{res.dizhiguanli}}" class="icon48"></image>
+      <view class="txt-33 h6 margin-top-10">地址管理</view>
+    </view>
+    <view class="flex-1 flex-row flex-column" bindtap="navtoPage" data-page="orderlist">
+      <image src="{{uploadpath}}resource/{{res.dingdanguanli}}" class="icon48"></image>
+      <view class="txt-33 h6 margin-top-10">订单管理</view>
+    </view>
+
+  </view>
+  <view class="height-40"></view>
+  <view class="flex-row flex-center">
+    <view class="flex-1 flex-row flex-column" bindtap="navtoPage" data-page="aftersale">
+      <image src="{{uploadpath}}resource/{{res.shouhougenzhong}}" class="icon48"></image>
+      <view class="txt-33 h6 margin-top-10">售后跟踪</view>
+    </view>
+
+    <view class="flex-1 flex-row flex-column" bindtap="tongzhi">
+      <image src="{{uploadpath}}resource/{{memberinfo.infonum>0?res.xiaoxi2:res.xiaoxi}}" class="icon48"></image>
+      <view class="txt-33 h6 margin-top-10">消息通知</view>
+    </view>
+
+    <view class="flex-1 flex-row flex-column" bindtap="toscan">
+      <image src="{{uploadpath}}resource/{{res.saoyisao}}" class="icon48"></image>
+      <view class="txt-33 h6 margin-top-10">打卡签到</view>
+    </view>
+
+    <!-- <view class="flex-1 flex-row flex-column" bindtap="navtoPage" data-page="myrenew">
+      <image src="{{uploadpath}}resource/{{res.yijiuhuanxin}}" class="icon48"></image>
+      <view class="txt-33 h6 margin-top-10">以旧换新</view>
+    </view> -->
+    <button open-type="contact" class="clear-button flex-1">
+      <view class="flex-1 flex-row flex-column">
+        <image src="{{uploadpath}}resource/{{res.lianxikefu}}" class="icon48"></image>
+        <view class="txt-33 h6 margin-top-10">联系客服</view>
+      </view>
+    </button>
+
+
+  </view>
+  <view class="height-40"></view>
+  <view class="flex-row flex-center">
+    <view class="flex-1 flex-row flex-column" bindtap="tofeedback">
+      <image src="{{uploadpath}}resource/{{res.yijianfankui}}" class="icon48"></image>
+      <view class="txt-33 h6 margin-top-10">意见反馈</view>
+    </view>
+
+    <view class="flex-1 flex-row flex-column" bindtap="toaboutus">
+      <image src="{{uploadpath}}resource/{{res.guanyuwomen}}" class="icon48"></image>
+      <view class="txt-33 h6 margin-top-10">关于我们</view>
+    </view>
+    <view class="flex-1"></view>
+    <view class="flex-1"></view>
+  </view>
+  <view class="height-50"></view>
+</view>
+
+<view>
+  <view class="flex-row flex-center">
+    <view class="flex-1 flex-row flex-column" bindtap="switchnav" id='A'>
+      <view class="f-30 {{type=='A'?'txt-bold txt-33':'txt-99'}}">作品</view>
+      <view class="olines {{type=='A'?'olines_act':''}}"></view>
+    </view>
+    <view class="flex-1 flex-row flex-column" bindtap="switchnav" id='B'>
+      <view class="f-30 {{type=='B'?'txt-bold txt-33':'txt-99'}}">收藏</view>
+      <view class="olines {{type=='B'?'olines_act':''}}"></view>
+    </view>
+  </view>
+
+  <view class="zplist">
+    <view class="cloumns-2 ">
+
+      <view wx:for="{{list}}" wx:key='k' wx:for-index='idx' bindtap="toshequ" data-item="{{item}}">
+        <block>
+          <image src="{{uploadpath}}community/{{item.img}}" mode="widthFix" class="zpimg"></image>
+        </block>
+      </view>
+
+    </view>
+  </view>
+</view>
+
+
+<view class="mask" bindtap="qxmask" wx:if="{{isfenxiao || isqiandao || ishexiao}}"></view>
+<view class="erweima" wx:if="{{isfenxiao}}">
+  <view class="bg-white radius-20">
+    <view class="flex-row flex-center">
+      <view class="flex-1"></view>
+      <image src="{{uploadpath}}resource/{{res.close}}" class="closeicon" bindtap="fxfenxiang"></image>
+    </view>
+    <view class="flex-row flex-column">
+      <image src="{{apiurl+'inst/qrcode?url=%2Fpages%2Fme%2Fme%3Fu_member_id%3D'+memberinfo.id}}" class="icon460">
+      </image>
+    </view>
+  </view>
+
+  <view class="flex-row flex-center">
+    <view class="saverweima" bindtap="saveerweima"
+      id="{{apiurl+'inst/qrcode?url=%2Fpages%2Fme%2Fme%3Fu_member_id%3D'+memberinfo.id}}">保存二维码</view>
+    <view class="flex-1"></view>
+    <button class="clear-button" open-type="share">
+      <view class="saverweima">分享</view>
+    </button>
+
+  </view>
+</view>
+
+<view class="qiandao" wx:if="{{isqiandao}}">
+  <view class="flex-row flex-center">
+    <view class="flex-1"></view>
+    <image src="{{uploadpath}}resource/{{res.close}}" class="closeicon" bindtap="qxmask"></image>
+  </view>
+  <view class="height-100"></view>
+  <view class="flex-row flex-column">
+    <image src="{{uploadpath}}resource/{{res.qiandaocg}}" class="qiandaocg"></image>
+    <view class="height-40"></view>
+    <view class="txt-33 h4">签到成功</view>
+  </view>
+</view>
+
+
+<view class="qiandao" wx:if="{{ishexiao}}">
+  <view class="flex-row flex-center">
+    <view class="flex-1"></view>
+    <image src="{{uploadpath}}resource/{{res.close}}" class="closeicon" bindtap="qxmask"></image>
+  </view>
+  <view class="height-100"></view>
+  <view class="flex-row flex-column">
+    <image src="{{uploadpath}}resource/{{res.qiandaocg}}" class="qiandaocg"></image>
+    <view class="height-40"></view>
+    <view class="txt-33 h4">核销成功</view>
+  </view>
+</view>

@@ -1,0 +1,70 @@
+<view class="margin30">
+  <view class="flex-row flex-center">
+    <input type="text" placeholder="请输入作品名称" value="{{info.name}}" bindinput="nameFn" maxlength="{{namelen}}"
+      class="flex-1 f-30 txt-33"></input>
+    <view class="h6 txt-99">{{namelen}}</view>
+  </view>
+  <view class="glines"></view>
+
+<view class="flex-row flex-wrap" >
+  <view class="h5 margin-right-10" style="color: #FF6900;" wx:for="{{info.huati}}" wx:key='k'>
+    {{item.name}}
+  </view>
+</view>
+
+  <textarea name="" id="" cols="30" rows="10" class="txt-33 h5" value="{{info.summary}}" bindinput="summaryFn"
+    placeholder="请输入作品内容"></textarea>
+  <view class="flex-row flex-wrap">
+    <view class="pore" wx:for="{{images}}" wx:key='k' wx:for-index='idx'>
+      <image src="{{uploadpath}}community/{{item.img}}" class="upload" mode="aspectFill" bindtap="uploadimg"
+        id='{{idx}}'></image>
+      <image src="{{uploadpath}}resource/{{res.guanbi}}" class="guanbi" bindtap="shanchu" id='{{idx}}'></image>
+    </view>
+
+    <image src="{{uploadpath}}resource/{{res.upload}}" class="upload" bindtap="uploadimg" id='-1'></image>
+  </view>
+  <view class="glines"></view>
+  <!-- <picker mode="selector" range="{{huati}}" range-key='name' bindchange="bindchange"> -->
+    <view class="flex-row flex-center" bindtap="bindshowocc">
+      <view class="h5 txt-33">#话题</view>
+      <view class="flex-1"></view>
+      <!-- <view class="h5 txt-33 ">{{info.huati_name}}</view> -->
+      <image src="{{uploadpath}}resource/{{res.right}}" class="icon-10 margin-left-10"></image>
+    </view>
+  <!-- </picker> -->
+
+
+
+  <view class="height-100"></view>
+
+</view>
+<view class="fixedbottom">
+  <view class="flex-row flex-column">
+    <view class="btns" bindtap="fabu">发布</view>
+  </view>
+</view>
+
+
+
+<view class="mask" wx:if="{{showocc}}" bindtap="bindshowocc"></view>
+<view class="htfixedbottom" wx:if="{{showocc}}">
+  <view class="padding24">
+    <view class="flex-row flex-center ">
+      <view class="txt-33">选择话题</view>
+      <view class="flex-1"></view>
+      <image src="{{uploadpath}}resource/{{res.clear}}" bindtap="bindshowocc" class="clearicon"></image>
+    </view>
+    <view class="height-50"></view>
+    <view class="flex-row flex-wrap">
+      <view wx:for="{{huati}}" wx:key='k' wx:for-index="idx" bindtap="choseocc" id='{{idx}}'>
+        <view class="occ {{item.check?'occ_act':''}}">{{item.name}}</view>
+      </view>
+    </view>
+    <view class="height-70"></view>
+    <view class="flex-row flex-column">
+      <view class="baocun" bindtap="saveocc">保存</view>
+    </view>
+
+  </view>
+
+</view>

@@ -1,0 +1,97 @@
+<view class="margin-30">
+  <view class="flex-row flex-center">
+    <view class="flex-row flex-column" bindtap="swtichnav" id='A'>
+      <view class="h5 {{type=='A'?'txt-33 txt-bold':' txt-66'}}">全部收藏</view>
+      <view class="olines {{type=='A'?'olines_act':' '}}"></view>
+    </view>
+    <view class="w60"></view>
+    <view class="flex-row flex-column" bindtap="swtichnav" id='B'>
+      <view class="h5 {{type=='B'?'txt-33 txt-bold':' txt-66'}}">收藏夹</view>
+      <view class="olines {{type=='B'?'olines_act':' '}}"></view>
+    </view>
+    <view class="w60"></view>
+    <view class="flex-row flex-column" bindtap="swtichnav" id='C'>
+      <view class="h5 {{type=='C'?'txt-33 txt-bold':' txt-66'}}">菜谱收藏</view>
+      <view class="olines {{type=='C'?'olines_act':' '}}"></view>
+    </view>
+
+    <view class="flex-1"></view>
+    <!-- <image src="{{uploadpath}}resource/{{res.bsearch}}" class="searchicon" wx:if="{{type=='A'}}"></image> -->
+    <image src="{{uploadpath}}resource/{{res.newfile}}" class="newfileicon" bindtap="qxscj" wx:if="{{type=='B'}}">
+    </image>
+  </view>
+
+  <view class="margin-top-30" wx:if="{{type=='A'}}">
+    <view wx:for="{{list}}" wx:key='k' class="margin-bottom-25" bindtap="todetail" id="{{item.community_id}}">
+      <view class="flex-row">
+        <image src="{{uploadpath}}community/{{item.img}}" class="imgs" mode="aspectFill"></image>
+        <view class="flex-1 margin-left-20">
+          <view class="h5 txt-33">{{item.community_name}}</view>
+          <view class="h6 txt-33 margin-top-10">5.0分 200人做过</view>
+          <view class="height-70"></view>
+          <view class="flex-row flex-center">
+            <image src="{{item.community_avatarUrl}}" class="touxiang"></image>
+            <view class="txt-99 h7 margin-left-10">{{item.community_nickName}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="margin-top-30 flex-row flex-wrap" wx:if="{{type=='B'}}">
+    <view wx:for="{{myshoucangjia}}" wx:key='k' wx:for-index="idx"
+      class="margin-bottom-25 {{idx%2==0?'margin-right-20':''}}">
+      <view class="" bindtap="toshoucangjia" id="{{item.id}}" data-item="{{item}}">
+        <image wx:if="{{item.img!=''}}" src="{{uploadpath}}menushoucang/{{item.img}}" class="scjimgs" mode="aspectFill">
+        </image>
+        <image wx:if="{{item.img=='' && item.scimg!=''}}" src="{{uploadpath}}community/{{item.scimg}}" class="scjimgs"
+          mode="aspectFill"></image>
+        <image wx:if="{{item.img=='' && item.scimg==''}}" src="{{uploadpath}}resource/{{res.mrshoucangjia}}"
+          class="scjimgs" mode="aspectFill"></image>
+        <view class="flex-1 margin-left-10 margin-top-5">
+          <view class="f-30 txt-33">{{item.name}}</view>
+          <view class="h7 txt-99 ">{{item.count}}道菜谱</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{type=='C'}}">
+
+    <view class="flex-row block_list" wx:for="{{mycookbooksc}}" wx:key='s' bindtap="navtoPage" data-page="cookbookinfo"
+      data-param="id={{item.cookbookinfo_id}}">
+
+      <image src="{{uploadpath}}cookbookinfo/{{item.cookbookinfo_coverimg}}" class="icon-100"></image>
+
+      <view class="flex-1 margin-left-40">
+        <view class="f-30 txt-bold">{{item.cookbookinfo_id_name}}</view>
+        <view class="txt-gray margin-top-10 chaochu2 h6">{{item.cookbookinfo_summary}}</view>
+      </view>
+    </view>
+
+
+  </view>
+
+</view>
+
+
+
+
+<view class="mask" bindtap="qxscj" wx:if="{{xjscj}}" catchtouchmove="{{ xjscj}}"></view>
+<view class="xjscj" wx:if="{{xjscj}}">
+  <view class="margin-30">
+    <view class="flex-row flex-center">
+      <view class="h5 txt-33">新建收藏夹</view>
+      <view class="flex-1"></view>
+      <view class="h5" style="color: #FF6900;" bindtap="quedingscj">确定</view>
+    </view>
+
+    <view class="flex-row margin-top">
+      <image src="{{uploadpath}}resource/{{res.mrshoucangjia}}" wx:if="{{scjimg==''}}" bindtap="uploadimg"
+        class="mrshoucangjia"></image>
+      <image src="{{uploadpath}}menushoucang/{{scjimg}}" wx:else bindtap="uploadimg" class="mrshoucangjia"></image>
+      <input type="text" value="{{scjname}}" bindinput="scjnameFn" placeholder="为你的收藏夹添加标题" class="h5"></input>
+    </view>
+
+  </view>
+</view>

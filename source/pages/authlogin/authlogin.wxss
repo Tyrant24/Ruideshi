@@ -1,0 +1,19 @@
+/**index.wxss**/
+page{
+  background: white;
+}
+.dot{
+  width:10rpx;
+  height: 10rpx;
+  background-color:#bbbbbb;
+  border-radius: 50%;
+}
+
+.buy{
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  background: #FF6900;
+  border-radius: 36rpx;
+  color: white;
+}

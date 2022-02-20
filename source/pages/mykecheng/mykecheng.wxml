@@ -1,0 +1,40 @@
+<view class="flex-row flex-center bg-white">
+    <view class="flex-1 flex-row flex-column" bindtap="switchnav" id='B'>
+        <view class="h5 {{type=='B'?'txt-69':'txt-66'}} ">进行中</view>
+        <view class="{{type=='B'?'lines_act':'lines'}}"></view>
+    </view>
+    <view class="flex-1 flex-row flex-column" bindtap="switchnav" id='A'>
+        <view class="h5 {{type=='A'?'txt-69':'txt-66'}} ">未开始</view>
+        <view class="{{type=='A'?'lines_act':'lines'}}"></view>
+    </view>
+    <view class="flex-1 flex-row flex-column" bindtap="switchnav" id='C'>
+        <view class="h5 {{type=='C'?'txt-69':'txt-66'}} ">已结束</view>
+        <view class="{{type=='C'?'lines_act':'lines'}}"></view>
+    </view>
+</view>
+
+
+<view class="margin-30">
+    <view wx:for="{{list}}" wx:key='k' class="margin-bottom-30" bindtap="tocourse" id="{{item.course_id}}">
+        <view class="flex-row flex-center">
+            <image src="{{uploadpath}}course/{{item.course_cover}}" class="course_cover"></image>
+            <view class="flex-1 margin-left-20">
+                <view class="h5 txt-33">{{item.course_name}}</view>
+                <view class="flex-row flex-wrap margin-top-30">
+                    <view wx:for="{{item.typelist}}" wx:key='i' wx:for-item="typeitem" class="types">{{typeitem.name}}</view>
+                </view>
+                <view class="height-40"></view>
+                <view class="flex-row flex-center">
+                    <view class="h7 txt-99">{{item.course_teacher}}</view>
+                    <view class="flex-1"></view>
+                    <view class="txt-69 h7">{{item.course_people}}人参加</view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="flex-row flex-column" wx:if="{{list.length==0}}">
+        <view class="height-100"></view>
+        <image src="{{uploadpath}}resource/{{res.kechengnull}}" mode="widthFix" class="icon-200"></image>
+    </view>
+</view>

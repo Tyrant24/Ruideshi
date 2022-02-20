@@ -1,0 +1,34 @@
+/* pages/mall/mall.wxss */
+
+.imageContainer{
+  /* width: 100%; */
+  height: 350rpx; 
+ }
+ .itemImg{
+  width: 100%;
+  height: 340rpx; 
+ }
+
+ .lesson-width { 
+  width: 20%; 
+}
+
+.card{
+  width: 334rpx; 
+  margin-bottom: 30rpx;
+}
+.coverimg{
+  width: 100%;
+  height: 330rpx;
+  
+}
+.cartsblock{
+  position: fixed;
+  right: 4%;
+  bottom: 8%;
+  z-index: 6;
+}
+.carts{
+  width: 120rpx;
+  height: 120rpx;
+}

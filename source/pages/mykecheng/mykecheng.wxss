@@ -1,0 +1,42 @@
+/* pages/mykecheng/mykecheng.wxss */
+
+.txt-69 {
+    color: #FF6900;
+}
+.lines_act {
+    width: 40rpx;
+    height: 6rpx;
+    background: #FF6900;
+    border-radius: 3rpx;
+    margin-top: 20rpx;
+}
+.lines {
+    width: 40rpx;
+    height: 6rpx;
+    background: transparent;
+    border-radius: 3rpx;
+    margin-top: 20rpx;
+}
+.course_cover {
+    width: 310rpx;
+    height: 200rpx;
+}
+
+.types{
+    padding: 6rpx 20rpx;
+    background: rgba(255,105,0, 0.1);
+    border-radius: 15rpx;
+    color: #FF6900;
+    font-size: 20rpx;
+    margin-right: 10rpx;
+    margin-bottom: 10rpx;
+}
+
+.margin-bottom-30 {
+    margin-bottom: 30rpx;
+}
+
+.icon-200 {
+    width: 400rpx;
+    height: 400rpx;
+}

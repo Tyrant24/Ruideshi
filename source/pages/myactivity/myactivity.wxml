@@ -1,0 +1,34 @@
+<view class="flex-row flex-center bg-white">
+    <view class="flex-1 flex-row flex-column" bindtap="switchnav" id='B'>
+        <view class="h5 {{type=='B'?'txt-69':'txt-66'}} ">进行中</view>
+        <view class="{{type=='B'?'lines_act':'lines'}}"></view>
+    </view>
+    <view class="flex-1 flex-row flex-column" bindtap="switchnav" id='A'>
+        <view class="h5 {{type=='A'?'txt-69':'txt-66'}} ">未开始</view>
+        <view class="{{type=='A'?'lines_act':'lines'}}"></view>
+    </view>
+    <view class="flex-1 flex-row flex-column" bindtap="switchnav" id='C'>
+        <view class="h5 {{type=='C'?'txt-69':'txt-66'}} ">已结束</view>
+        <view class="{{type=='C'?'lines_act':'lines'}}"></view>
+    </view>
+</view>
+
+
+<view class="margin-30">
+    <view wx:for="{{list}}" wx:key='k' class="margin-bottom-30 bg-white radius-10" bindtap="toactivity" id="{{item.activity_id}}">
+
+        <image src="{{uploadpath}}activity/{{item.activity_cover}}" class="course_cover"></image>
+        <view class="margin-top-10 margin-left-20 margin-right-20 margin-bottom-20">
+            <view class="h5 txt-33">{{item.activity_name}}</view>
+            <view class="h7 txt-99 margin-top-10"  wx:if="{{item.usestatus=='B'}}">距离活动结束还有 <text class="txt-69 h7">{{item.days>0?item.days:item.hours>0?item.hours:item.minute>0?item.minute:item.second}}</text> {{item.days>0?'天':item.hours>0?'小时':item.minute>0?'分钟':'秒'}}</view>
+            <view class="h7 txt-99 margin-top-10" wx:if="{{item.usestatus=='A'}}">距离活动开始还有 <text class="txt-69 h7">{{item.days>0?item.days:item.hours>0?item.hours:item.minute>0?item.minute:item.second}}</text> {{item.days>0?'天':item.hours>0?'小时':item.minute>0?'分钟':'秒'}}</view>
+            <view class="h7 txt-99 margin-top-10"  wx:if="{{item.usestatus=='C'}}">活动已结束</view>
+        </view>
+    </view>
+
+
+    <view class="flex-row flex-column" wx:if="{{list.length==0}}">
+        <view class="height-100"></view>
+        <image src="{{uploadpath}}resource/{{res.activitynull}}" mode="widthFix" class="icon-200"></image>
+    </view>
+</view>

@@ -1,0 +1,34 @@
+<view class="flex-row flex-column">
+  <view class="flex-row flex-center searchbox">
+    <image src="{{uploadpath}}resource/{{res.search}}" class="icon30"></image>
+    <input type="text" placeholder="搜索客户信息" class="h6 flex-1" placeholder-class="txt-99" value="{{searchword}}" bindconfirm="bindconfirm"></input>
+  </view>
+</view>
+
+<view class="margin-30">
+  <view wx:for="{{list}}" wx:key='k' bindtap="todetail" id="{{item.id}}">
+    <view class="flex-row ">
+      <!-- <image src="{{uploadpath}}resource/{{res.touxiang}}" wx:if="{{item.touxiang==''&&item.avatarUrl==''}}"
+        class="touxiang"></image> -->
+      <!-- <image src="{{uploadpath}}member/{{item.touxiang}}" wx:if="{{item.touxiang!=''}}" class="touxiang"></image> -->
+      <image src="{{item.avatarUrl}}" wx:if="{{item.avatarUrl!=''}}" class="touxiang"></image>
+      <view class="flex-1">
+        <view class="flex-row flex-center">
+          <view class="flex-1">
+            <view class="flex-row flex-bottom">
+              <view class="txt-33 h5">{{item.nickName}}</view>
+              <!-- <image src="{{uploadpath}}resource/{{res.vip}}" mode="widthFix" class="vipicon margin-left-10"></image> -->
+              <image src="{{uploadpath}}member/{{memberinfo.memberlevel_icon}}" mode="widthFix" class="vipicon margin-left-10"></image>
+            </view>
+            <view class="h6 txt-99 margin-top-5">手机号：{{item.mobile}}</view>
+          </view>
+          <image src="{{uploadpath}}resource/{{res.birth}}" class="icon-24" wx:if="{{item.tishi<=7}}"></image>
+          <view style="color:#E4CB81" class="h6 margin-left-10 margin-right-20" wx:if="{{item.tishi<=7}}">生日还有{{item.tishi}}天</view>
+          <image src="{{uploadpath}}resource/{{res.right}}" class="icon24"></image>
+        </view>
+        <view class="lines"></view>
+      </view>
+
+    </view>
+  </view>
+</view>

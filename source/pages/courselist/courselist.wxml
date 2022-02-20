@@ -1,0 +1,23 @@
+<view class="margin30">
+  <view class="flex-row flex-wrap">
+    <view class="  {{idx%2==0?'margin-right-20':''}} w334" wx:for="{{list}}" wx:key='i' wx:for-index='idx'
+      wx:for-item='course' bindtap="todetail" id="{{course.id}}">
+
+      <view class="pore">
+        <image src="{{uploadpath}}course/{{course.cover}}" mode="aspectFill" class="cover"></image>
+        <view class="{{course.sf_status=='A'?'huiyuan':'mianfei'}}">{{course.sf_status_name}}</view>
+      </view>
+      <view class="margin-top-20 txt-33 h5 chaochu">{{course.name}}</view>
+      <view class="flex-row flex-wrap margin-top-20 margin-left-10 margin-right-10">
+        <view class="fenlei" wx:for="{{course.typelist}}" wx:key='t' wx:for-item='typeitem' wx:for-index='yidx'
+          wx:if="{{yidx<2}}">{{typeitem.name}}</view>
+      </view>
+      <view class="flex-row flex-center margin-top-20 margin-left-10 margin-right-10">
+        <view class="h7 txt-99">{{course.teacher}}</view>
+        <view class="flex-1"></view>
+        <view class="h7" style="color:#FF6900;">{{course.people}}人参加</view>
+      </view>
+    </view>
+  </view>
+
+</view>

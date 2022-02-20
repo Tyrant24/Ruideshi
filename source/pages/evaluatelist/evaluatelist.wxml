@@ -1,0 +1,31 @@
+<!--pages/evaluatelist/evaluatelist.wxml-->
+
+<view class="margin-top-20 bg-white padding-30">
+  <view wx:for="{{evaluatelist}}">
+    <view class="flex-row flex-center">
+      <image src="{{item.photoimg}}" class="icon-30 radius-50"></image>
+
+      <view class="margin-left-20">
+        <view class="h6 txt-bold">{{item.member_name}}</view>
+        <view class="flex-row flex-center margin-top-5">
+          <image wx:for="{{5}}" wx:for-index="idx" wx:for-item="star"
+            src="{{uploadpath}}resource/{{item.score>=(idx+1)?res.star1:res.star2}}" class="icon-10 margin-right-10 ">
+          </image>
+        </view>
+      </view>
+    </view>
+
+    <view class="h6   margin-top-20">{{item.content}}</view>
+
+    <view class="flex-row flex-center margin-top-20">
+      <image wx:for="{{item.imglist}}" wx:for-item="evaluateimg"  src="{{uploadpath}}evaluate/{{evaluateimg.img}}"
+        class="icon-168 margin-right-10"></image>
+    </view>
+  </view>
+ 
+</view>
+
+<view class="text-center" wx:if="{{evaluatelist.length==0}}">
+  <image src="{{uploadpath}}resource/{{res.nodata}}" class="nodata" /> 
+</view> 
+ 

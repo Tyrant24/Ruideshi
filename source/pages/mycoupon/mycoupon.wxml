@@ -1,0 +1,49 @@
+<view class="fixedtop flex-row flex-center">
+  <view class="flex-row flex-column flex-1" bindtap="swtichnav" id='A'>
+    <view class="h5 txt-66 {{type=='A'?'txt-69':''}}">商品优惠券</view>
+    <view class="lines {{type=='A'?'lines_act':''}}"></view>
+  </view>
+  <view class="flex-row flex-column flex-1" bindtap="swtichnav" id='B'>
+    <view class="h5 txt-66 {{type=='B'?'txt-69':''}}">课程优惠券</view>
+    <view class="lines {{type=='B'?'lines_act':''}}"></view>
+  </view>
+</view>
+
+<view class="height-80"></view>
+
+<view>
+
+  <view wx:for="{{list}}" wx:key='k' style="background-image:url({{uploadpath}}resource/{{item.use_status=='A'?res.youhuiquan:res.youhuiquan2}})"
+    class="youhuiquan flex-row flex-center">
+
+    <view class="flex-row flex-column w200">
+      <view class="{{item.use_status=='A'?'txt-69':'txt-99'}} f-54 txt-bold "><text class="{{item.use_status=='A'?'txt-69':'txt-99'}} f-30 txt-bold">￥</text>{{item.discount}}</view>
+      <view class="{{item.use_status=='A'?'txt-69':'txt-99'}} h6 margin-top-20">{{item.usercondition}}</view>
+    </view>
+    <view class="flex-1 margin-left-20 flex-row flex-center {{item.use_status=='A'?'margin-top-30':''}}">
+      <view class="flex-1">
+        <view class="f-30 {{item.use_status=='A'?'txt-33':'txt-99'}}">{{item.name}}</view>
+        <view class="h6 txt-99 margin-top-20">有效期至{{item.expiration_time}}</view>
+        <view class="flex-row flex-center margin-right-20" wx:if="{{item.use_status=='A'}}">
+          <view class="flex-1"></view>
+          <view class="shiyong" bindtap="touse" data-item="{{item}}"  >去使用</view>
+        </view>
+      </view>
+
+    </view>
+
+  </view>
+
+</view>
+
+
+<view class="mask" wx:if="{{ishsow}}" bindtap="showqrcode"></view>
+<view class="fixedmid"  wx:if="{{ishsow}}">
+  <view class="flex-row flex-center">
+    <view class="flex-1"></view>
+    <image src="{{uploadpath}}resource/{{res.close}}" bindtap="showqrcode" class="icon44"></image>
+  </view>
+  <view class="flex-row flex-column">
+    <image src="{{apiurl+'inst/qrcode2?id='+coupon_id+'&usecode='+usecode}}" class="erweima"></image>
+  </view>
+</view>

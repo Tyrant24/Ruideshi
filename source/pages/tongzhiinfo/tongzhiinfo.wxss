@@ -1,0 +1,23 @@
+/* pages/tongzhiinfo/tongzhiinfo.wxss */
+
+Page {
+  background: #F9F9F8;
+}
+.community_img {
+  width: 690rpx;
+  height: 340rpx;
+}
+
+.margin30 {
+  margin: 20rpx 30rpx;
+  border-radius: 10rpx;
+  background: #ffffff;
+  padding-bottom: 14rpx;
+}
+
+.infomsg {
+  margin: 20rpx 30rpx;
+  border-radius: 10rpx;
+  background: #ffffff;
+  padding: 30rpx 30rpx  20rpx 20rpx;
+}

@@ -1,0 +1,116 @@
+/* pages/fatie/fatie.wxss */
+
+.margin30 {
+  margin: 30rpx;
+}
+.glines {
+  width: 100%;
+  height: 1rpx;
+  background: #EEEEEE;
+  margin: 30rpx 0;
+}
+.upload{
+  width: 164rpx;
+  height: 164rpx;
+  margin-right: 10rpx;
+  margin-top: 10rpx;
+}
+
+.fixedbottom {
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  padding: 20rpx  0;
+  left: 0;
+  z-index: 100;
+}
+.btns {
+  width: 690rpx;
+  height: 70rpx;
+  background: #FF6900;
+  border-radius: 35rpx;
+  color: #FFFFFF;
+  font-size: 28rpx;
+  line-height: 70rpx;
+  text-align: center;
+}
+.pore{
+  position: relative;
+}
+.guanbi{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+
+
+.mask{
+  width: 100vw;
+  height: 100vh;
+  background: #000000;
+  opacity: 0.5;
+  z-index: 99;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.htfixedbottom{
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background: #FFFFFF;
+  border-radius: 20rpx 20rpx 0 0;
+}
+
+.padding24{
+  padding: 24rpx 18rpx 20rpx 30rpx;
+}
+
+.clearicon {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.occ{
+  min-width: 160rpx;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  background: #F3F3F3;
+  border-radius: 35rpx;
+  color: #333333;
+  font-size: 28rpx;
+  margin-right: 16rpx;
+  margin-bottom: 20rpx;
+  padding: 0 10rpx;
+}
+.occ_act {
+  background: #FF6900;
+  color: #FFFFFF;
+}
+
+.baocun{
+  width: 690rpx;
+  height: 70rpx;
+  background: #FF6900;
+  border-radius: 35rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 28rpx;
+}
+
+.xhao {
+  padding: 17rpx 17rpx 17rpx 20rpx;
+  border-radius: 30rpx;
+  background: #FFFFFF;
+  border: 1rpx solid #EEEEEE;
+  margin-right: 20rpx;
+}

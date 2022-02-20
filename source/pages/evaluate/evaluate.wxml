@@ -1,0 +1,54 @@
+<!--pages/evaluate/evaluate.wxml-->
+<view class="padding-30 margin-bottom-20 bg-white" wx:for="{{list}}" wx:for-item="goods" wx:for-index="index">
+
+  <view class="flex-row    ">
+    <image src="{{uploadpath}}goods/{{goods.goods_coverimage}}" class="icon-80"></image>
+    <view class="margin-left-20 flex-1">
+      <view class="h6 txt-bold">{{goods.goods_name}}</view>
+      <view class="h7 txt-gray margin-top-30">500g</view>
+    </view>
+  </view>
+
+  <view class="flex-row flex-center margin-top-20">
+    <view class="h5">综合评分：</view>
+    <view class="flex-row flex-center">
+      <view class="margin-left-10" wx:for="{{5}}" wx:for-index="idx" bindtap="touch_star" id="{{idx+1}}"
+        data-id="{{goods.goods_id}}" data-goodsindex="{{index}}">
+        <image src="{{uploadpath}}resource/{{goods.score>=(idx+1)?res.star1:res.star2}}" class="icon-star ">
+        </image>
+      </view>
+    </view>
+  </view>
+
+  <view class="">
+    <textarea placeholder="多多描述商品和使用感受，可以帮助更多想买的人" class="text h5 margin-top-10" value="{{goods.content}}"
+      data-goodsindex="{{index}}" bindinput="bindinput"></textarea>
+  </view>
+
+
+  <view class='flex-row flex-center flex-wrap'>
+
+    <view class='margin-20 flex-row  ' wx:for="{{goods.evaluateimg}}" wx:key="k" wx:for-index="idx2" >
+      <image src='{{uploadpath}}evaluate/{{item}}' id="{{idx2}}" data-goodsindex="{{index}}" bindtap='jgminusImg' class='icon-60 padding-top-20'>
+      </image>
+    </view>
+
+    <view class=' flex-row   ' wx:if="{{goods.evaluateimg.length<9}}" bindtap='jguploadimg' data-goodsindex="{{index}}">
+      <view class='flex-1'></view>
+      <image src='{{uploadpath}}resource/{{res.uploadimg}}' class='icon-60 margin-20'></image>
+      <view class='flex-1'></view>
+    </view>
+
+  </view>
+
+</view>
+
+<view class="height-150"></view>
+
+<view class="under_block ">
+  <view class=" padding-20">
+    <view class="under_button bg-orange txt-white h5 " bindtap="submit" >提交评价
+    </view>
+  </view>
+  <view class="height-40"></view>
+</view>

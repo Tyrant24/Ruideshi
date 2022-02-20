@@ -1,0 +1,62 @@
+/* pages/memberinfo/memberinfo.wxss */
+
+.pore {
+  position: relative;
+}
+.touxiang{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+}
+.photo{
+  width: 69rpx;
+  height: 69rpx;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+.w60 {
+  width: 60rpx;
+}
+.lines {
+  width: 100%;
+  height: 1rpx;
+  background: #EEEEEE;
+ 
+}
+.martb30 {
+  margin: 30rpx 0;
+}
+
+.btns {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  background: #FF6900;
+  border-radius: 35rpx;
+  color: #FFFFFF;
+  font-size: 28rpx;
+}
+
+.huoqu {
+  width: 150rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  background: #FF6900;
+  border-radius: 35rpx;
+  color: #FFFFFF;
+  font-size: 24rpx;
+}
+
+.xhao {
+  padding: 17rpx 17rpx 17rpx 20rpx;
+  border-radius: 30rpx;
+  background: #FFFFFF;
+  border: 1rpx solid #EEEEEE;
+  margin-right: 20rpx;
+  color: #999999;
+  font-size: 28rpx;
+}

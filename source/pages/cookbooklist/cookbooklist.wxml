@@ -1,0 +1,11 @@
+<!--pages/cookbooklist/cookbooklist.wxml-->
+
+<view class="flex-row block_list" wx:for="{{list}}" wx:key='s' bindtap="navtoPage" data-page="cookbookinfo" data-param="id={{item.id}}">
+
+  <image src="{{uploadpath}}devcookbook/{{item.cover}}" class="icon-100"></image>
+
+  <view class="flex-1 margin-left-40">
+    <view class="f-30 txt-bold">{{item.name}}</view>
+    <view class="txt-gray margin-top-10 chaochu2 h6">{{item.summary}}</view>
+  </view>
+</view>

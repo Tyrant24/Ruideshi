@@ -1,0 +1,49 @@
+<!--pages/myrenew/myrenew.wxml-->
+<view class="navigate_bar">
+  <view class="padding-30  flex-row flex-center ">
+    <view class="flex-1 h5 {{choose=='F'?'txt-orange txt-bold':''}} text-center" bindtap="bindchoose" id="F">全部</view>
+
+    <view class="flex-1 h5 {{choose=='A'?'txt-orange txt-bold':''}} text-center" bindtap="bindchoose" id="A">进行中</view>
+
+    <view class="flex-1 h5 {{choose=='B'?'txt-orange txt-bold':''}} text-center" bindtap="bindchoose" id="B">已完成</view>
+
+  </view>
+</view>
+
+<view class="height-100"></view>
+
+<view class="radius-10 bg-white margin-30 padding-20 " wx:for="{{list}}">
+
+  <view class="flex-row flex-center">
+    <view class="h6 txt-gray flex-1">{{item.submit_time}}</view>
+    <view class="txt-orange h6">{{item.renew_status_name}}</view>
+  </view>
+
+  <view class="flex-row flex-center margin-top">
+    <view class="h6 flex-1">回收机器</view>
+    <view class="txt-gray h6">{{item.fankui==''?'等待评估':item.fankui}}</view>
+  </view>
+
+  <view class="flex-row flex-center margin-top">
+    <view class=" flex-1"></view>
+    <view class="order_btn txt-gray margin-left-20 h6 border-gray" bindtap="bindcancel"  id="{{item.id}}"
+      wx:if="{{item.renew_status=='A'}}">取消申请</view>
+  </view>
+
+
+
+</view>
+
+<view class="text-center" wx:if="{{list.length==0}}">
+  <image src="{{uploadpath}}resource/{{res.nodata}}" class="nodata" /> 
+</view>
+
+ 
+<view class="height-70"></view>
+<view class="under_block ">
+  <view class=" padding-20">
+    <view class="under_button bg-orange txt-white h5 " bindtap="navtoPage" data-page="topiclist">我要以旧换新
+    </view>
+  </view>
+  <view class="height-40"></view>
+</view>

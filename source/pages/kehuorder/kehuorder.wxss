@@ -1,0 +1,50 @@
+/* pages/kehuorder/kehuorder.wxss */
+
+Page {
+  background: #F9F9F8;
+}
+.margin30{
+  margin:  30rpx ;
+}
+.orders{
+  padding: 22rpx 20rpx;
+  background: #FFFFFF;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+.txt-69 {
+  color: #FF6900;
+}
+.goods_coverimage{
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.lines {
+  width: 100%;
+  height: 1rpx;
+  background: #EEEEEE;
+  margin: 18rpx 0 22rpx;
+}
+
+.touxiang{
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+}
+
+.righticon {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.fixedtop{
+  width: 100vw;
+  padding-top: 30rpx;
+  padding-bottom: 10rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: #F9F9F8;
+}

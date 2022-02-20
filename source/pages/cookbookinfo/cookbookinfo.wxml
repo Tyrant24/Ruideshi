@@ -1,0 +1,108 @@
+<!--pages/cookbookinfo/cookbookinfo.wxml-->
+<image src="{{uploadpath}}devcookbook/{{info.pic}}" class="img"></image>
+
+<view class="padding-30">
+  <view class="h3  ">{{info.name}}</view>
+  <view class="h6 txt-gray margin-top">{{info.summary}}</view>
+
+  <view class="flex-row   bg-gray radius-20 padding-20 margin-top">
+
+    <view class="text-center flex-1">
+      <view class="f-30">{{info.prepare}}</view>
+      <view class="h7 margin-top-5 txt-gray">准备时间</view>
+    </view>
+
+    <view class="text-center flex-1">
+      <view class="f-30">{{info.cooktime}}</view>
+      <view class="h7 margin-top-5 txt-gray">烹饪时间</view>
+    </view>
+
+    <view class="text-center flex-1">
+      <view class="f-30">{{info.people}}</view>
+      <view class="h7 margin-top-5 txt-gray">适餐人数</view>
+    </view>
+
+    <view class="text-center flex-1">
+      <view class="f-30">{{info.cooklevel}}</view>
+      <view class="h7 margin-top-5 txt-gray">难度</view>
+    </view>
+
+
+
+  </view>
+
+  <view class="h5 txt-bold margin-top">食材清单</view>
+
+  <view class="margin-top-20 bg-gray radius-20 padding-20">
+    <view class="flex-row {{idx>0?'margin-top-30':''}}" wx:for="{{info.ingredient}}" wx:key="k" wx:for-index="idx">
+      <view class="h6 flex-1">{{item.name}}</view>
+      <view class="h6">{{item.guige}}</view>
+    </view>
+  </view>
+
+  <view class="h5 txt-bold margin-top">使用工具</view>
+
+  <view class="margin-top-20 bg-gray radius-20 padding-20">
+    <view class="flex-row {{idx>0?'margin-top-30':''}}" wx:for="{{info.instrument}}" wx:key="e" wx:for-index="idx">
+      <view class="h6 flex-1">{{item.name}}</view>
+      <view class="h6">{{item.guige}}</view>
+    </view>
+  </view>
+
+  <view class="h5 txt-bold margin-top">烹饪步骤</view>
+
+  <view wx:for="{{info.process}}" wx:key="a" wx:for-index="idx">
+    <view class="h6 margin-top  ">步骤{{idx+1}}/{{info.process.length}}</view>
+    <image src="{{uploadpath}}devcookbook/{{item.imgUrl}}" wx:if="{{item.imgUrl!=''}}" class="processimg margin-top-20"></image>
+    <view class="h5 margin-top-30">{{item.content}}</view>
+  </view>
+
+  <view class="h5 txt-bold margin-top">小贴士</view>
+
+  <view class="h5 margin-top-30">{{info.cooktips}}</view>
+
+  <view class="margin-top txt-gray h7">共{{info.comment.length}}条评论</view>
+
+  <view wx:for="{{info.comment}}" wx:key='n'>
+    <view class="flex-row flex-center margin-top-30">
+      <image src="{{item.avatarUrl}}" class="icon-30 radius-50"></image>
+      <view class="txt-gray h6 flex-1 margin-left-20">{{item.nickName}}</view>
+      <image src="{{uploadpath}}resource/{{item.isdz>0?res.dianzan2:res.dianzan}}" class="icon-15 margin-right-20"
+        bindtap="bindcommentdz" id="{{item.id}}"></image>
+      <view class="h7 txt-red">{{item.dz_count_comment}}</view>
+    </view>
+    <view class="flex-row flex-center">
+      <view class="icon-30 "></view>
+
+      <view class="flex-1 margin-left-20">
+        <view class="txt-gray h5 ">{{item.content}}</view>
+        <view class=" h6  margin-top-20 padding-20 bg-gray radius-10" wx:if="{{item.huifu!=''}}">
+          {{item.huifuren}}（作者）：{{item.huifu}}</view>
+      </view>
+    </view>
+  </view>
+
+
+</view>
+
+<view class="height-150"></view>
+<view class="under_block bg-white">
+  <view class="flex-row flex-center padding-20">
+    <input type="text" placeholder="说点什么" class="textinput h5" confirm-type="send" bindconfirm="bindsend"></input>
+
+    <image src="{{uploadpath}}resource/{{info.isdianzan>0?res.dianzan2:res.dianzan}}" class="icon-24 " bindtap="binddz">
+    </image>
+    <view class="padding-left-5 f-30" bindtap="binddz">{{info.dz_count}}</view>
+    <view class="flex-1"></view>
+    <image src="{{uploadpath}}resource/{{info.isshoucang>0?res.shoucang2:res.shoucang}}" class="icon-24 "
+      bindtap="bindsc"></image>
+    <view class="padding-left-5 f-30" bindtap="bindsc">{{info.sc_count}}</view>
+    <view class="flex-1"></view>
+    <image src="{{uploadpath}}resource/{{res.zhuanfa}}" class="icon-24  "></image>
+    <view class="padding-left-5 f-30">分享</view>
+    <view class="flex-1"></view>
+  </view>
+
+  <view class="height-40"></view>
+
+</view>

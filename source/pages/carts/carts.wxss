@@ -1,0 +1,91 @@
+/* pages/carts/carts.wxss */
+Page {
+  background: #f3f3f3;
+}
+
+.line {
+  width: 2rpx;
+  height: 20rpx;
+  background: #CDCDCD;
+}
+
+.padding_top {
+  padding: 16rpx 30rpx 16rpx 30rpx;
+}
+
+.padding_goods {
+  padding: 30rpx 24rpx 30rpx 24rpx;
+}
+
+.chooseicon {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.goodsimg {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.add_subtract {
+  height: 40rpx;
+  line-height: 30rpx;
+  width: 36rpx;
+  text-align: center;
+  border: 2rpx solid rgb(219, 219, 219);
+}
+
+.left_radius {
+  border-radius: 10rpx 0 0 10rpx;
+}
+
+.right_radius {
+  border-radius: 0 10rpx 10rpx 0;
+}
+
+.number_block {
+  width: 66rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  border-top: 2rpx solid rgb(219, 219, 219);
+  border-bottom: 2rpx solid rgb(219, 219, 219);
+}
+
+.icon_subtract {
+  width: 18rpx;
+  height: 2rpx;
+}
+
+.icon_add {
+  width: 18rpx;
+  height: 18rpx;
+}
+
+.subtract_block {
+  position: absolute;
+  z-index: 2;
+  bottom: 30rpx;
+  right: 24rpx;
+}
+
+ 
+.balance {
+  width: 160rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  text-align: center;
+  color: white;
+  background: #FF6900;
+  border-radius: 34rpx;
+}
+.delete {
+  width: 160rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  text-align: center;
+  color: white;
+  background: #c91e00;
+  border-radius: 34rpx;
+}
+ 

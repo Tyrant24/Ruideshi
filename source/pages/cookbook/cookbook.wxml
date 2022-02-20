@@ -1,0 +1,58 @@
+<!--pages/cookbook/cookbook.wxml-->
+<view class="flex-row " style="height:100vh">
+
+
+  <view class="left_block " style="background:#F5F5F5">
+    <view class="  ">
+      <scroll-view scroll-y style="height:100vh;" scroll-with-animation scroll-top="{{scrollTops}}">
+        <view class="checkblock  h5  {{index==idx?'bg-gray txt-bold border':'txt-gray border2'}}" wx:for="{{list}}" wx:key='s'
+          wx:for-index="idx" id="{{idx}}" bindtap="checktype">{{item.name}}</view>
+      </scroll-view>
+    </view>
+
+  </view>
+
+  <view class="flex-1"></view>
+
+  <view class="right_block">
+
+    <view class="">
+
+      <scroll-view scroll-y style="height:100vh;" scroll-with-animation scroll-into-view="scroll-{{rightCur}}"
+        bindscroll="scrollLink">
+        <view>
+
+          <view class=" margin-top-20 " wx:for="{{list}}" id="scroll-{{idx}}" wx:for-index="idx" data-idx="{{idx}}"
+            wx:key='k' bindtap="checkcar">
+
+            <view class=" flex-row  flex-center">
+              <view class="tiao margin-left-30"></view>
+              <view class="h5 margin-left-20 margin-right-20">{{item.name}}</view>
+              <view class="tiao"></view>
+            </view>
+
+            <view class="flex-row flex-center flex-wrap">
+              <view class=" padding-20" wx:for="{{item.disheslist}}" wx:for-index="idx2" wx:for-item="dishes" wx:key='e'
+                bindtap="navtoPage" data-page="cookbooklist" data-param="dishes_id={{dishes.id}}">
+                <view class="flex-row flex-column">
+                  <image src="{{uploadpath}}devcookbooksubtype/{{dishes.cover}}" class="carimg" mode="aspectFit"></image>
+                  <view class="h6 margin-top-20 txt-gray">{{dishes.name}}</view>
+                </view>
+              </view>
+
+            </view>
+
+
+
+
+          </view>
+
+
+        </view>
+      </scroll-view>
+
+    </view>
+
+  </view>
+
+</view>

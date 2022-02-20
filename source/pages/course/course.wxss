@@ -1,0 +1,109 @@
+/* pages/course/course.wxss */
+
+.searchicon{
+  width: 30rpx;
+  height: 30rpx;
+}
+.searchbox{
+  margin: 0 30rpx;
+  padding: 0 20rpx;
+  height: 54rpx;
+  border-radius: 27rpx;
+  background: #EEEEEE;
+}
+.type {
+  height: 60rpx;
+  margin-top: 20rpx ;
+  margin-bottom: 20rpx ;
+}
+.margin-right-69 {
+  margin-right: 69rpx;
+}
+.tab-h{
+  
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+  
+}
+.tab-item{
+   
+   display: inline-block;
+}
+.navtop {
+   overflow: hidden;
+}
+.typelines{
+  width: 40rpx;
+  height: 6rpx;
+  background: transparent;
+  border-radius: 3rpx;
+  margin-top: 10rpx;
+}
+.typelines_act {
+  background: #FF6900;
+}
+
+.cover {
+  width: 320rpx;
+  height: 450rpx;
+}
+.fenlei{
+  padding: 5rpx 20rpx;
+  border-radius: 15rpx;
+  background: rgba(255,105,0, 0.1);
+  color: #FF6900;
+  font-size: 20rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+}
+.coursebox{
+  margin-top: 30rpx;
+  margin-bottom: 60rpx;
+  /* margin-left: 30rpx; */
+ 
+}
+.w320 {
+  width: 320rpx;
+}
+
+.indexbanner{
+  width: 690rpx;
+  height: 240rpx;
+  border-radius: 10rpx;
+}
+.marginsw{
+  margin: 10rpx 30rpx 40rpx;
+}
+.pore {
+  position: relative;
+}
+.huiyuan{
+  width: 80rpx;
+  height: 38rpx;
+  background: #352F32;
+  border-radius: 6rpx;
+  line-height: 38rpx;
+  text-align: center;
+  color: #FF6900;
+  font-size: 24rpx;
+  font-weight: bold;
+  position: absolute;
+  bottom: 20rpx;
+  left: 20rpx;
+}
+.mianfei{
+  width: 80rpx;
+  height: 38rpx;
+  background: #FFFFFF;
+  border-radius: 6rpx;
+  line-height: 38rpx;
+  text-align: center;
+  color: #FF6900;
+  font-size: 24rpx;
+  font-weight: bold;
+  position: absolute;
+  bottom: 20rpx;
+  left: 20rpx;
+} 

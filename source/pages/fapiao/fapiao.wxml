@@ -1,0 +1,61 @@
+<view class="flex-row flex-center navtop">
+  <image src="{{uploadpath}}goods/{{info.order_item[0].goods_coverimage}}" class="goods_coverimage"></image>
+  <view class="flex-1 margin-left-20">
+    <view class="h5 txt-33">订单编号：{{info.orderno}}</view>
+    <view class="h5 txt-33 margin-top-20">开票金额：<text class="txt-69 h7">￥</text><text
+        class="h5 txt-69">{{info.payment_amount}}</text></view>
+  </view>
+</view>
+
+
+<view class="margin-30 bg-white padding-20">
+  <form action="" catchsubmit="formSubmit">
+    <view class="flex-row flex-center">
+      <view class="h5 txt-33">发票类型</view>
+      <view class="flex-1"></view>
+      <view class="h6 txt-33">增值税电子普通发票</view>
+    </view>
+    <view class="flex-row flex-center margin-top">
+      <view class="h5 txt-33">抬头类型</view>
+      <view class="flex-1"></view>
+      <image src="{{uploadpath}}resource/{{taitoutype=='A'?res.chooseicon:res.notchooseicon}}" bindtap="chosetype" id='A' class="icon-15"></image>
+      <view class="h6 txt-33 margin-left-10" bindtap="chosetype" id='A'>个人或事业单位</view>
+      <image src="{{uploadpath}}resource/{{taitoutype=='B'?res.chooseicon:res.notchooseicon}}" bindtap="chosetype" id='B' class="icon-15 margin-left-20"></image>
+      <view class="h6 txt-33 margin-left-10" bindtap="chosetype" id='B'>企业</view>
+    </view>
+    <view class="flex-row flex-center margin-top">
+      <view class="h5 txt-33">发票抬头</view>
+      <view class="flex-1"></view>
+      <input type="text" placeholder="填写需要开具发票的企业名称" value="{{taitou}}" name='taitou' class="h6 txt-33 text-right"></input>
+    </view>
+    <view class="flex-row flex-center margin-top" wx:if="{{taitoutype=='B'}}">
+      <view class="h5 txt-33">税号</view>
+      <view class="flex-1"></view>
+      <input type="text" placeholder="纳税人识别号"  value="{{shuihao}}" name='shuihao' class="h6 txt-33 text-right"></input>
+    </view>
+    <view class="flex-row flex-center margin-top" wx:if="{{taitoutype=='B'}}">
+      <view class="h5 txt-33">开户银行</view>
+      <view class="flex-1"></view>
+      <input type="text" placeholder="选填" value="{{kahuyinhang}}" name='kahuyinhang' class="h6 txt-33 text-right"></input>
+    </view>
+    <view class="flex-row flex-center margin-top" wx:if="{{taitoutype=='B'}}">
+      <view class="h5 txt-33">银行账号</view>
+      <view class="flex-1"></view>
+      <input type="text" placeholder="选填"  value="{{yinhangzhanghao}}" name='yinhangzhanghao' class="h6 txt-33 text-right"></input>
+    </view>
+    <view class="flex-row flex-center margin-top" wx:if="{{taitoutype=='B'}}">
+      <view class="h5 txt-33">企业地址</view>
+      <view class="flex-1"></view>
+      <input type="text" placeholder="选填" value="{{qiyedizhi}}" name='qiyedizhi' class="h6 txt-33 text-right"></input>
+    </view>
+    <view class="flex-row flex-center margin-top" wx:if="{{taitoutype=='B'}}">
+      <view class="h5 txt-33">企业电话</view>
+      <view class="flex-1"></view>
+      <input type="text" placeholder="选填" value="{{qiyedianhua}}" name='qiyedianhua' class="h6 txt-33 text-right"></input>
+    </view>
+    <view class="flex-row flex-column">
+      <!-- <view class="height-70"></view> -->
+      <button class="clear-button btns" formType="submit">提交</button>
+    </view>
+  </form>
+</view>

@@ -1,0 +1,5 @@
+/* pages/evaluatelist/evaluatelist.wxss */
+
+Page{
+  background: #f3f3f3;
+}

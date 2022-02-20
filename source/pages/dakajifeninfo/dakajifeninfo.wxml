@@ -1,0 +1,27 @@
+<!--pages/dakajifeninfo/dakajifeninfo.wxml-->
+
+<view class="bg-white margin-top-20">
+  <view class="paddings flex-row flex-center">
+    <view class="f-30">打卡类型</view>
+    <view class="margin-left-60 h5">{{info.type_name}}</view>
+  </view>
+
+  <view class="paddings flex-row flex-center">
+    <view class="f-30">打卡名称</view>
+    <view class="margin-left-60 h5">{{info.name}}</view>
+  </view>
+
+  <view class="paddings flex-row flex-center">
+    <view class="f-30">开始时间</view>
+    <view class="margin-left-60 h5">{{info.start_time}}</view>
+  </view>
+
+  <view class="paddings flex-row flex-center">
+    <view class="f-30">结束时间</view>
+    <view class="margin-left-60 h5">{{info.end_time}}</view>
+  </view>
+</view>
+
+<view class="text-center">
+  <image src="{{url}}" class="code"></image>
+</view>

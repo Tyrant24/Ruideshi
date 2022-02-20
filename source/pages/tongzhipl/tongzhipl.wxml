@@ -1,0 +1,48 @@
+<view class="bg-white">
+  <view wx:for="{{list}}" wx:key='k' class="margin30">
+    <view class="flex-row">
+      <image src="{{item.member_avatarUrl}}" class="touxiang"></image>
+      <view class="flex-1">
+        <view class="flex-row flex-center">
+          <view>
+            <view class="txt-33 h6">{{item.member_nickName}}</view>
+            <view class="h7 txt-99 margin-top-5">{{item.shijian}}</view>
+          </view>
+          <view class="flex-1"></view>
+          <view class="huifu" wx:if="{{item.isread!='Y'}}" bindtap="huifu" data-item="{{item}}">回复</view>
+          <view wx:else class="flex-row flex-center">
+            <view class="huifu2"  >已回复</view>
+            <view class="huifu margin-left padding-left-5 padding-right-5"  bindtap="huifu" data-item="{{item}}">再次回复</view>
+          </view>
+        </view>
+        <view class="margin-top-20 txt-33 h6">{{item.content}}</view>
+        <view class="cons flex-row flex-center margin-top-20" wx:if="{{item.plresponsecon!=''}}">
+          <view class="flex-1 paddingcon">
+            <view class="h6 txt-99">我：{{item.plresponsecon}}</view>
+          </view>
+        </view>
+        <view class="cons flex-row flex-center margin-top-20" wx:if="{{item.plresponsecon=='' && item.plcon!=''}}">
+
+          <view class="flex-1 paddingcon">
+            <view class="h6 txt-99">我：{{item.plcon}}</view>
+          </view>
+        </view>
+        <view class="cons flex-row flex-center margin-top-20" wx:if="{{item.plresponsecon=='' && item.plcon==''}}">
+          <image src="{{uploadpath}}community/{{item.community_img}}" mode="aspectFill" class="community_img"></image>
+          <view class="flex-1 paddingcon">
+            <view class="h6 txt-99">{{item.community_name}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="lines"></view>
+  </view>
+</view>
+
+
+<view wx:if="{{showinput}}" class="bg-white fixedbottom">
+  <view class=" inputs">
+    <input type="text" class="h5" placeholder="回复" cursor-spacing="50" focus="{{showinput}}" adjust-position='false'
+      hold-keyboard="{{showinput}}" bindconfirm="bindconfirm" placeholder-class="txt-99"></input>
+  </view>
+</view>

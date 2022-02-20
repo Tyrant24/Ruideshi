@@ -1,0 +1,99 @@
+/* pages/community/community.wxss */
+
+Page {
+  background: #F9F9F8;
+}
+
+.fixedtop {
+  position: fixed;
+  background: #ffffff;
+  z-index: 100;
+  width: 100vw;
+  padding-bottom: 14rpx;
+}
+.w30{
+  width: 60rpx;
+}
+.olines {
+  width: 40rpx;
+  height: 6rpx;
+  background: #FF6900;
+  border-radius: 3rpx;
+}
+.bgtr{
+  background: transparent;
+}
+.margin-20 {
+  margin: 20rpx;
+}
+.huati {
+  padding: 13rpx 20rpx 14rpx;
+  border-radius: 25rpx;
+  background: #ffffff;
+  box-shadow: 0rpx 0rpx 14rpx 0rpx rgba(95, 91, 107, 0.16);
+  color: #999999;
+  font-weight: bold;
+  font-size: 24rpx;
+  margin-right: 20rpx;
+  margin-bottom: 14rpx;
+}
+.huati_act {
+  background: rgba(255,105,0, 0.1);
+  color: #FF6900;
+}
+
+.cover{
+  width: 350rpx;
+  /* height: 350rpx; */
+  border-radius: 10rpx 10rpx 0 0;
+}
+.menu{
+  width: 350rpx ;
+  border-radius: 10rpx;
+  background: #ffffff;
+  margin-bottom: 10rpx;
+}
+.touxiang {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+.menucon{
+  padding: 17rpx 9rpx ; 
+}
+.margin-top-25 {
+  margin-top: 25rpx;
+}
+.dianzan {
+  width: 26rpx;
+  height: 24rpx;
+  margin-right: 9rpx;
+}
+
+.fatie{
+  width: 161rpx;
+  height: 164rpx;
+  position: fixed;
+  bottom: 20rpx;
+  right: 0;
+  z-index: 100;
+}
+
+.act_cover{
+  width: 690rpx;
+  height: 360rpx;
+  margin-bottom: 15rpx;
+}
+
+.w100 {
+  padding: 20rpx 30rpx;
+  background: #ffffff;
+}
+.margin-bottom-30{
+  margin-bottom: 30rpx;
+}
+
+.cloumns {
+  column-count: 2;
+}

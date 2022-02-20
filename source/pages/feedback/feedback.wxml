@@ -1,0 +1,24 @@
+
+  <view class="texta">
+    <textarea name="" value="{{contents}}" bindinput="contentsFn" maxlength="500" id="" cols="30" rows="10" placeholder="请输入您要反馈的问题（5-500字以内）" class=" h6 " placeholder-class="txt-99"></textarea>
+  </view>
+ 
+
+
+<view class="margin-30">
+  <view class="txt-33 h6">图片（选填，提供问题截图）</view>
+  <view class="flex-row flex-wrap">
+    <view class="pore" wx:for="{{image}}" wx:key='k' wx:for-index="idx">
+      <image src="{{uploadpath}}feedback/{{item.img}}" mode="aspectFill" bindtap="uploadimg" id="{{idx}}" class="uploadicon" ></image>
+      <image src="{{uploadpath}}resource/{{res.guanbi}}" class="guanbi" bindtap="deleteimg" id="{{idx}}"></image>
+    </view>
+    <image src="{{uploadpath}}resource/{{res.upload}}" bindtap="uploadimg" id='-1' class="uploadicon"></image>
+  </view>
+  <view class=" margin-top-20">
+    <text class="h7" style="color:#DDDDDD;">{{instinfo.feedback}}</text>
+  </view>
+</view>
+
+<view class="fixedbottom">
+  <view class="tijiao" bindtap="tijiao">提交</view>
+</view>
